@@ -1,4 +1,9 @@
 PaddyPidgeon::Application.routes.draw do
+  mount Citygate::Engine => "/"
+
+  namespace :admin do
+    resources :people
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

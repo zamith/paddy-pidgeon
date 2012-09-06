@@ -1,0 +1,7 @@
+<h1 class="page-header"><%= t("admin.people.index.title") %></h1>
+
+<ul id="contacts">
+  <% @people.each do |person| %>
+    <li><%= person.phone_no %></li>
+  <% end %>
+</ul>

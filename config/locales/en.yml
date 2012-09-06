@@ -2,4 +2,19 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  flash:
+    contact_added: "Contact with phone number %{number} added"
+
+  admin:
+    people:
+      index:
+        title: "Contacts"
+      new:
+        title: "New Contact"
+        name: "Name"
+        email: "Email"
+        phone_no: "Phone Number"
+        submit: "Create Contact"
+      show:
+        title: "Contact Info"
+        phone_no: "Phone Number:"
