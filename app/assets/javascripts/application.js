@@ -14,4 +14,3 @@
 //= require jquery_ujs
 //= require citygate
 //= require_tree .
-//= require bootstrap/bootstrap.min
