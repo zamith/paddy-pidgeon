@@ -1,4 +1,8 @@
 PaddyPidgeon::Application.routes.draw do
+  root :to => "i_am_root#index"
+
+  resources :i_am_root
+
   mount Citygate::Engine => "/"
 
   namespace :admin do

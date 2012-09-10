@@ -23,7 +23,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'citygate', :git => "https://zamith@github.com/zamith/citygate.git"
+gem 'citygate', :path => "../citygate" #:git => "https://zamith@github.com/zamith/citygate.git"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

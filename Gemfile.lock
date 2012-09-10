@@ -1,7 +1,7 @@
 PATH
   remote: ../citygate
   specs:
-    citygate (0.0.5)
+    citygate (0.0.6)
       cancan (>= 1.6.7)
       devise (>= 2.0.4)
       devise-encryptable (>= 0.1.1)
@@ -10,6 +10,7 @@ PATH
       omniauth-facebook (~> 1.2.0)
       omniauth-openid (~> 1.0.1)
       rails (>= 3.2.2)
+      sass-rails
       uuidtools (>= 2.1.2)
       will_paginate (>= 3.0.3)
 
