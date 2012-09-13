@@ -15,6 +15,8 @@ en:
       list_messages: "List Messages"
 
     events:
+      edit:
+        title: "Edit Event"
       fields:
         end_date: "End Date"
         name: "Name"
@@ -27,6 +29,8 @@ en:
         title: "Event Details"
 
     groups:
+      edit:
+        title: "Edit Group"
       fields:
         name: "Name"
       index:
@@ -37,6 +41,8 @@ en:
         title: "Group Details"
 
     contacts:
+      edit:
+        title: "Edit Contact"
       fields:
         email: "Email"
         name: "Name"
@@ -62,6 +68,7 @@ en:
     contact_created: "Contact with phone number %{number} created."
     contact_edited: "Contact with phone number %{number} edited."
     event_created: "Event %{name} created."
+    event_edited: "Event %{name} edited."
     group_created: "Group %{name} created."
 
   helpers:

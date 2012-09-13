@@ -22,7 +22,26 @@ class Admin::EventsController < Admin::ApplicationController
     respond_with(:admin, @event)
   end
 
+  def update
+    @event = Event.find(params[:id])
+
+    if @event.update_attributes(params[:event])
+      flash[:notice] = t('flash.event_edited', name: @event.name)
+    else
+      # fail
+    end
+
+    redirect_to admin_event_path(@event)
+  end
+
   def edit
     @event = Event.find params[:id]
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+
+    redirect_to admin_events_path
   end
 end
