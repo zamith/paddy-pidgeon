@@ -1,0 +1,5 @@
+message_sender:
+  url: "192.168.84.2"
+  port: "30001"
+  username: 'testname'
+  password: 'password'
