@@ -1,6 +1,5 @@
-GIT
-  remote: https://zamith@github.com/zamith/citygate.git
-  revision: 5c27f0f0fa6ce56d10204f27d20e6c47abb11800
+PATH
+  remote: ../citygate
   specs:
     citygate (0.0.6)
       cancan (>= 1.6.7)
