@@ -6,3 +6,6 @@
     <span><%= @person.phone_no %></span>
   </div>
 </section>
+
+<%= link_to t('admin.people.show.edit_link'), edit_admin_person_path(@person) %>
+<%= link_to t('admin.people.show.index_link'), admin_people_path %>

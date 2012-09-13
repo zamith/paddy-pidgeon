@@ -1,24 +1,6 @@
 <h1 class="page-header form-header"><%= t("admin.people.new.title") %></h1>
 
-<%= form_for @person, url: admin_people_path, html: {class: "offset1"} do |f| %>
-  <% @person.errors.full_messages.each do |msg| %>
-    <p><%= msg %></p>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: t("admin.people.new.name") %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, placeholder: t("admin.people.new.email") %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone_no %>
-    <%= f.phone_field :phone_no, placeholder: t("admin.people.new.phone_no"), required: "required" %>
-  </div>
-
+<%= form_for @person, url: admin_people_path, html: {class: "offset1"} do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
   <%= f.submit t("admin.people.new.submit"), class: "btn btn-success" %>
 <% end %>

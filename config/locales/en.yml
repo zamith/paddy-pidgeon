@@ -18,3 +18,9 @@ en:
       show:
         title: "Contact Info"
         phone_no: "Phone Number:"
+        index_link: "Back"
+        edit_link: "Edit"
+      edit:
+        back_link: "Back"
+      validation:
+        phone_no: "Insert a nine digit number."

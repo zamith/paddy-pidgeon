@@ -1,0 +1,18 @@
+<% @person.errors.full_messages.each do |msg| %>
+  <p><%= msg %></p>
+<% end %>
+
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name, placeholder: t("admin.people.new.name") %>
+</div>
+
+<div class="field">
+  <%= form.label :email %>
+  <%= form.email_field :email, placeholder: t("admin.people.new.email") %>
+</div>
+
+<div class="field">
+  <%= form.label :phone_no %>
+  <%= form.phone_field :phone_no, placeholder: t("admin.people.new.phone_no"), required: "required", pattern: "(\\+351|00351)?[0-9]{9}", title: t("admin.people.validation.phone_no") %>
+</div>
