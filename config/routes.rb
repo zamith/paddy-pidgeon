@@ -7,7 +7,11 @@ PaddyPidgeon::Application.routes.draw do
 
   namespace :admin do
     resources :people
-    resources :messages
+    resources :messages do
+      collection do
+        post :confirm
+      end
+    end
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

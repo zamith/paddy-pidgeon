@@ -2,20 +2,31 @@ class Admin::MessagesController < Admin::ApplicationController
   load_and_authorize_resource :class => "Message"
   respond_to :html
 
+  #before_filter :confirm, only: [:create]
+
   def new
     @message = Message.new
   end
 
+  #def confirm
+  #  if Message.number_of_messages(params[:message][:text]) > 1
+  #    session[:message] = params[:message]
+  #    render 'confirm'
+  #  end
+  #end
+
   def create
     messages = Message.divide_text params[:message]
+    p messages
 
     delivered = true
-    message.each do |message|
+    messages.each do |message|
+      message.user = current_user
       message.save
       #delivered = false unless message.send_from_phone
     end
 
     flash[:notice] = t("flash.messages_sent", number_of_messages: messages.size) if delivered
-    respond_with(:admin, messages)
+    #respond_with(:admin, messages)
   end
 end
