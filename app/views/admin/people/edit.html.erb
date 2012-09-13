@@ -1,0 +1,7 @@
+<h1 class="page-header"><%= t("admin.people.edit.title") %></h1>
+
+<%= form_for @person, :url => admin_person_path(@person), :method => :put do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
+<% end %>
+
+<%= link_to t('admin.people.edit.back_link'), admin_person_path(@person) %>

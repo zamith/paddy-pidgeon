@@ -1,7 +1,7 @@
 PaddyPidgeon::Application.routes.draw do
-  root :to => "i_am_root#index"
+  root :to => "home#index"
 
-  resources :i_am_root
+  resources :home, only: [:index]
 
   mount Citygate::Engine => "/"
 

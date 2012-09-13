@@ -21,4 +21,8 @@ class Admin::PeopleController < Admin::ApplicationController
     flash[:notice] = t("flash.contact_added", number: @person.phone_no) if @person.save
     respond_with(:admin, @person)
   end
+
+  def edit
+     @person = Person.find params[:id]
+  end
 end
