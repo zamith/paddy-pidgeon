@@ -6,13 +6,13 @@ PaddyPidgeon::Application.routes.draw do
   mount Citygate::Engine => "/"
 
   namespace :admin do
-    resources :people
-    resources :messages do
-      collection do
-        post :confirm
-      end
-    end
+    resources :messages
+    resources :contacts
+    resources :events
+    resources :groups
+    resources :messages
   end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

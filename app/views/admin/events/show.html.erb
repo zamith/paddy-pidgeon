@@ -1,0 +1,10 @@
+<h1><%= t('admin.events.show.title') %></h1>
+
+<ul id="event">
+  <li><span><%= t('admin.events.fields.name') %></span><span><%= @event.name %></span></li>
+  <li><span><%= t('admin.events.fields.start_date') %></span><span><%= @event.start_date %></span></li>
+  <li><span><%= t('admin.events.fields.end_date') %></span><span><%= @event.end_date %></span></li>
+</ul>
+
+<%= link_to t('admin.actions.edit'), edit_admin_event_path(@event) %>
+<%= link_to t('admin.actions.back'), admin_events_path %>

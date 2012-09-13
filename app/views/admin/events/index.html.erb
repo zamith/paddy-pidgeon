@@ -1,0 +1,23 @@
+<h1 class="page-header"><%= t("admin.events.index.title") %></h1>
+
+<table id="events">
+  <thead>
+    <th><%= t('admin.events.fields.name') %></th>
+    <th><%= t('admin.events.fields.start_date') %></th>
+    <th><%= t('admin.events.fields.end_date') %></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @event.each do |event| %>
+      <tr>
+        <td><%= link_to event.name, admin_event_path(@event) %></td>
+        <td><%= event.start_date %></td>
+        <td><%= event.end_date %></td>
+        <td><%= link_to t('admin.actions.delete'), admin_event_path(@event), class: 'icon-trash', confirm: t('admin.actions.confirm'), :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('admin.events.new.title'), new_admin_event_path %>
+<%= link_to t('admin.actions.back'), root_path %>

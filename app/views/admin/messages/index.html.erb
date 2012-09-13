@@ -1,0 +1,10 @@
+<h1 class="page-header"><%= t("admin.messages.index.title") %></h1>
+
+<ul id="messages">
+  <% @messages.each do |message| %>
+    <li><%=  %></li>
+  <% end %>
+</ul>
+
+<%= link_to t('admin.messages.new.title'), new_admin_message_path %>
+<%= link_to t('admin.messages.back'), root_path %>

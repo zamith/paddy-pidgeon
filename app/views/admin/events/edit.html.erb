@@ -1,0 +1,8 @@
+<h1><%= t('admin.events.edit.title') %></h1>
+
+<%= form_for @event, url: admin_event_path(@event), method: :put do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
+
+  <%= form.submit t('admin.actions.edit') %>
+  <%= link_to t('admin.actions.back'), admin_event_path(@event) %>
+<% end %>

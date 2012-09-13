@@ -2,18 +2,9 @@ class Admin::MessagesController < Admin::ApplicationController
   load_and_authorize_resource :class => "Message"
   respond_to :html
 
-  #before_filter :confirm, only: [:create]
-
   def new
     @message = Message.new
   end
-
-  #def confirm
-  #  if Message.number_of_messages(params[:message][:text]) > 1
-  #    session[:message] = params[:message]
-  #    render 'confirm'
-  #  end
-  #end
 
   def create
     messages = Message.divide_text params[:message]

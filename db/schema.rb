@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905143659) do
+ActiveRecord::Schema.define(:version => 20120913201847) do
 
   create_table "citygate_authorizations", :force => true do |t|
     t.string   "provider"
@@ -76,13 +76,32 @@ ActiveRecord::Schema.define(:version => 20120905143659) do
   add_index "citygate_users", ["invited_by_id"], :name => "index_citygate_users_on_invited_by_id"
   add_index "citygate_users", ["reset_password_token"], :name => "index_citygate_users_on_reset_password_token", :unique => true
 
+  create_table "contacts", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "contacts", ["user_id"], :name => "index_people_on_user_id"
+
+  create_table "contacts_groups", :id => false, :force => true do |t|
+    t.integer "group_id"
+    t.integer "contact_id"
+  end
+
+  add_index "contacts_groups", ["contact_id", "group_id"], :name => "index_contacts_groups_on_contact_id_and_group_id"
+  add_index "contacts_groups", ["group_id", "contact_id"], :name => "index_contacts_groups_on_group_id_and_contact_id"
+
   create_table "events", :force => true do |t|
     t.string   "name"
     t.datetime "start_date"
-    t.datetime "finish_date"
+    t.datetime "end_date"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "events", ["user_id"], :name => "index_events_on_user_id"
@@ -95,14 +114,6 @@ ActiveRecord::Schema.define(:version => 20120905143659) do
   end
 
   add_index "groups", ["user_id"], :name => "index_groups_on_user_id"
-
-  create_table "groups_people", :id => false, :force => true do |t|
-    t.integer "group_id"
-    t.integer "person_id"
-  end
-
-  add_index "groups_people", ["group_id", "person_id"], :name => "index_groups_people_on_group_id_and_person_id"
-  add_index "groups_people", ["person_id", "group_id"], :name => "index_groups_people_on_person_id_and_group_id"
 
   create_table "messages", :force => true do |t|
     t.text     "text"
@@ -117,16 +128,5 @@ ActiveRecord::Schema.define(:version => 20120905143659) do
   add_index "messages", ["event_id"], :name => "index_messages_on_event_id"
   add_index "messages", ["group_id"], :name => "index_messages_on_group_id"
   add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
-
-  create_table "people", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone_no"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "people", ["user_id"], :name => "index_people_on_user_id"
 
 end

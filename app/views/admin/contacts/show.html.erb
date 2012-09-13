@@ -1,0 +1,10 @@
+<h1><%= t('admin.contacts.show.title') %></h1>
+
+<ul id="contact">
+  <li><span><%= t('admin.contacts.fields.name') %></span><span><%= @contact.name %></span></li>
+  <li><span><%= t('admin.contacts.fields.email') %></span><span><%= @contact.email %></span></li>
+  <li><span><%= t('admin.contacts.fields.phone_number') %></span><span><%= @contact.phone_number %></span></li>
+</ul>
+
+<%= link_to t('admin.actions.edit'), edit_admin_contact_path(@contact) %>
+<%= link_to t('admin.actions.back'), admin_contacts_path %>

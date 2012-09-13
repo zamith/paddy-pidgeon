@@ -1,0 +1,23 @@
+<h1><%= t('admin.contacts.index.title') %></h1>
+
+<table id="contacts">
+  <thead>
+    <th><%= t('admin.contacts.fields.phone_number') %></th>
+    <th><%= t('admin.contacts.fields.name') %></th>
+    <th><%= t('admin.contacts.fields.email') %></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @contact.each do |contact| %>
+      <tr>
+        <td><%= link_to contact.phone_number, admin_contact_path(@contact) %></td>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+        <td><%= link_to t('admin.actions.delete'), admin_contact_path(@contact), class: 'icon-trash', confirm: t('admin.actions.confirm'), :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('admin.contacts.new.title'), new_admin_contact_path %>
+<%= link_to t('admin.actions.back'), root_path %>

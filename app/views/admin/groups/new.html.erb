@@ -1,0 +1,8 @@
+<h1><%= t('admin.groups.new.title') %></h1>
+
+<%= form_for @group, url: admin_groups_path do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
+
+  <%= form.submit t('admin.groups.new.submit') %>
+  <%= link_to t('admin.groups.new.back'), admin_groups_path %>
+<% end %>

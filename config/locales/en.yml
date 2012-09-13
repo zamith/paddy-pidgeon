@@ -2,38 +2,78 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  flash:
-    contact_added: "Contact with phone number %{number} added"
-
   admin:
-    people:
+    actions:
+      back: "Back"
+      confirm: "Are you sure?"
+      create: "Create"
+      delete: "Delete"
+      edit: "Edit"
+      list_contacts: "List Contacts"
+      list_events: "List Events"
+      list_groups: "List Groups"
+      list_messages: "List Messages"
+
+    events:
+      edit:
+        title: "Edit Event"
+      fields:
+        end_date: "End Date"
+        name: "Name"
+        start_date: "Start Date"
+      index:
+        title: "Events"
+      new:
+        title: "New Event"
+      show:
+        title: "Event Details"
+
+    groups:
+      edit:
+        title: "Edit Group"
+      fields:
+        name: "Name"
+      index:
+        title: "Groups"
+      new:
+        title: "New Group"
+      show:
+        title: "Group Details"
+
+    contacts:
+      edit:
+        title: "Edit Contact"
+      fields:
+        email: "Email"
+        name: "Name"
+        phone_number: "Phone Number"
       index:
         title: "Contacts"
       new:
         title: "New Contact"
-        name: "Name"
-        email: "Email"
-        phone_no: "Phone Number"
-        submit: "Create Contact"
       show:
-        title: "Contact Info"
-        phone_no: "Phone Number:"
-        index_link: "Back"
-        edit_link: "Edit"
-      edit:
-        back_link: "Back"
-      validation:
-        phone_no: "Insert a nine digit number."
+        title: "Contact Details"
+      validations:
+        phone_number: "Insert a nine digit number."
 
     messages:
+      index:
+        title: "Messages"
       new:
         title: "New Message"
-        submit: "Create Message"
+      show:
+        title: "Message Details"
+
+  flash:
+    contact_created: "Contact with phone number %{number} created."
+    contact_edited: "Contact with phone number %{number} edited."
+    event_created: "Event %{name} created."
+    event_edited: "Event %{name} edited."
+    group_created: "Group %{name} created."
 
   helpers:
     label:
       message:
-        text: "Text"
         deliver_date: "Deliver Date"
         group_id: "Receivers Group"
-
+        text: "Text"

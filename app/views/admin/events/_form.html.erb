@@ -1,0 +1,12 @@
+<% @event.errors.full_messages.each do |msg| %>
+  <p><%= msg %></p>
+<% end %>
+
+<%= form.label :name %>
+<%= form.text_field :name, required: 'required' %>
+
+<%= form.label :start_date %>
+<%= form.text_field :start_date %>
+
+<%= form.label :end_date %>
+<%= form.text_field :end_date %>
