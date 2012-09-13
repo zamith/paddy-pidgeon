@@ -1,0 +1,9 @@
+<h1 class="page-header"><%= t("admin.events.index.title") %></h1>
+
+<ul id="events">
+  <% @events.each do |event| %>
+    <li><%= event.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to t('admin.events.new.title'), new_admin_event_path %>
