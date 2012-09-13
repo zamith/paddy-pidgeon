@@ -1,7 +1,8 @@
-PATH
-  remote: ../citygate
+GIT
+  remote: https://zamith@github.com/zamith/citygate.git
+  revision: 5c27f0f0fa6ce56d10204f27d20e6c47abb11800
   specs:
-    citygate (0.0.5)
+    citygate (0.0.6)
       cancan (>= 1.6.7)
       devise (>= 2.0.4)
       devise-encryptable (>= 0.1.1)
@@ -10,6 +11,7 @@ PATH
       omniauth-facebook (~> 1.2.0)
       omniauth-openid (~> 1.0.1)
       rails (>= 3.2.2)
+      sass-rails
       uuidtools (>= 2.1.2)
       will_paginate (>= 3.0.3)
 
