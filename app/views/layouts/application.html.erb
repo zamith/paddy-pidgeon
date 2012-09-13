@@ -7,12 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="wrapper">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+    <% end %>
 
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-<% end %>
+    <% if user_signed_in? %>
+      <header>
+        <%= role_changer %>
+        <%= citygate_nav_links %>
+      </header>
+    <% end %>
 
-<%= yield %>
+    <a href="/" id="logo">PaddyPidgeon</a>
 
+    <div id="main-content">
+      <%= yield %>
+    </div>
+
+    <footer>
+      <p>Copyright © 2012 <a href="http://www.groupbuddies.com">Group Buddies</a></p>
+    </footer>
+  </div>
 </body>
 </html>
