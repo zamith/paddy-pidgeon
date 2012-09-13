@@ -7,21 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="wrapper">
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-    <% end %>
-
-    <% if user_signed_in? %>
-      <header>
-        <%= role_changer %>
+  <% if user_signed_in? %>
+    <header>
+      <div class="wrapper">
+        <%# role_changer %>
         <%= citygate_nav_links %>
-      </header>
-    <% end %>
+      </div>
+    </header>
+  <% end %>
 
+  <div class="wrapper">
     <a href="/" id="logo">PaddyPidgeon</a>
 
     <div id="main-content">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <% end %>
+
       <%= yield %>
     </div>
 
