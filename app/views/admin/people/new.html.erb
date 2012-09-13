@@ -2,5 +2,6 @@
 
 <%= form_for @person, url: admin_people_path, html: {class: "offset1"} do |form| %>
   <%= render partial: 'form', locals: { form: form } %>
-  <%= f.submit t("admin.people.new.submit"), class: "btn btn-success" %>
+  
+  <%= form.submit t("admin.people.new.submit"), class: "btn btn-success" %>
 <% end %>

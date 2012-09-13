@@ -1,6 +1,10 @@
-class Admin::MessageController < Admin::ApplicationController
+class Admin::MessagesController < Admin::ApplicationController
   load_and_authorize_resource :class => "Message"
   respond_to :html
+
+  def new
+    @message = Message.new
+  end
 
   def create
     messages = Message.divide_text params[:message]

@@ -13,4 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require citygate
-//= require_tree .
+//= require messages

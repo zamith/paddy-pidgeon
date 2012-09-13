@@ -24,3 +24,16 @@ en:
         back_link: "Back"
       validation:
         phone_no: "Insert a nine digit number."
+
+    messages:
+      new:
+        title: "New Message"
+        submit: "Create Message"
+
+  helpers:
+    label:
+      message:
+        text: "Text"
+        deliver_date: "Deliver Date"
+        group_id: "Receivers Group"
+
