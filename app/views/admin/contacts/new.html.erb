@@ -1,0 +1,8 @@
+<h1><%= t('admin.contacts.new.title') %></h1>
+
+<%= form_for @contact, url: admin_contacts_path do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
+  
+  <%= form.submit t('admin.actions.create') %>
+  <%= link_to t('admin.actions.back'), admin_contacts_path %>
+<% end %>

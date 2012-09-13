@@ -1,0 +1,6 @@
+<% @group.errors.full_messages.each do |msg| %>
+  <p><%= msg %></p>
+<% end %>
+
+<%= form.label :name %>
+<%= form.text_field :name, required: 'required' %>

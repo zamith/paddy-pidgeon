@@ -1,0 +1,7 @@
+<h1><%= t('admin.events.show.title') %></h1>
+
+<span><%= t('admin.events.show.name') %></span>
+<span><%= @event.name %></span>
+
+<%= link_to t('admin.events.show.edit'), edit_admin_event_path(@event) %>
+<%= link_to t('admin.events.show.back'), admin_events_path %>

@@ -11,7 +11,7 @@ class Message < ActiveRecord::Base
       'user' => configatrix.message_sender['username'], 
       'key' => configatrix.message_sender['password'],
       'message' => self.text,
-      'numbers' => self.group.people
+      'numbers' => self.group.contacts
     }
     url = URI.parse("#{configatrix.message_sender['url']}:#{configatrix.message_sender['port']}")
     resp, data = Net::HTTP.post_form(url, params)

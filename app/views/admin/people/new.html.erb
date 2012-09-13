@@ -1,7 +1,0 @@
-<h1 class="page-header form-header"><%= t("admin.people.new.title") %></h1>
-
-<%= form_for @person, url: admin_people_path do |form| %>
-  <%= render partial: 'form', locals: { form: form } %>
-  
-  <%= form.submit t("admin.people.new.submit") %>
-<% end %>
