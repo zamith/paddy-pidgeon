@@ -1,5 +1,11 @@
+@font-face
+  font-family: Oxygen
+  src: 'fonts/Oxygen-Regular.ttf'
+
+
 body
   background-image: image-url('bg.png')
+  font-family: Oxygen, Arial, Sans-Serif
 
 
 a
@@ -7,8 +13,16 @@ a
   text-decoration: none
 
 
+a:hover
+  text-decoration: underline
+
+
+i
+  font-size: 1.2em
+
+
 h1
-  font-size: 2em
+  font-size: 1.6em
   margin-bottom: 20px
 
 
@@ -19,7 +33,6 @@ h1
 
 header
   background-color: rgba(0, 0, 0, 0.3)
-  font-family: Arial, Sans-Serif
   padding: 10px 0
   text-align: right
 
@@ -32,12 +45,8 @@ header
     font-size: 0.8em
     padding: 5px 0
 
-  a:hover
-    text-decoration: underline
-
   i
     color: #F2F2F2
-    font-size: 1.2em
     vertical-align: -2px
 
 
@@ -65,10 +74,63 @@ header
     background-repeat: no-repeat
 
 
+.list
+  font-size: 0.9em
+  width: 742px
+
+  thead tr
+    background-color: #7492A3
+
+  tbody tr:nth-child(odd)
+    background-color: rgba(117, 147, 163, 0.5)
+
+  tbody tr:nth-child(even)
+    background-color: rgba(117, 147, 163, 0.2)
+
+  td, th
+    display: inline-block
+    margin: 10px
+    width: 160px
+
+  i
+    padding-right: 5px
+
+
+.actions
+  margin-top: 20px
+
+  a
+    display: inline-block
+    font-size: 0.9em
+    margin-right: 10px
+    text-align: center
+
+
+.button
+  background-color: #7492A3
+  border-radius: 5px
+  padding: 10px
+
+
+.button:hover
+  color: #FFF
+  text-decoration: none
+
+
+.details
+  li
+    margin-bottom: 10px
+
+  .label
+    display: inline-block
+    width: 200px
+
+
 footer
   color: #FFF
+  font-size: 0.9em
   padding-top: 40px
   text-align: right
 
   a
-    color: #FFF
+    color: #F9F6E7

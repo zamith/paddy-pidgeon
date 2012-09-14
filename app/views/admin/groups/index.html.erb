@@ -1,6 +1,6 @@
 <h1><%= t('admin.groups.index.title') %></h1>
 
-<table id='groups'>
+<table class='list'>
   <thead>
     <th><%= t('admin.groups.fields.name') %></th>
     <th></th>
@@ -9,11 +9,13 @@
     <% @groups.each do |group| %>
       <tr>
         <td><%= link_to group.name, admin_group_path(group) %></td>
-        <td><%= link_to t('admin.actions.delete'), admin_group_path(group), class: 'icon-trash', confirm: t('admin.actions.confirm'), :method => :delete %></td>
+        <td><i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_group_path(group), confirm: t('admin.actions.confirm'), :method => :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('admin.groups.new.title'), new_admin_group_path %>
-<%= link_to t('admin.actions.back'), root_path %>
+<div class="actions">
+  <%= link_to t('admin.groups.new.title'), new_admin_group_path, class: 'button' %>
+  <%= link_to t('admin.actions.back'), root_path %>
+</div>
