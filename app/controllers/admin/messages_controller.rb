@@ -1,5 +1,5 @@
 class Admin::MessagesController < Admin::ApplicationController
-  load_and_authorize_resource :class => "Message"
+  load_and_authorize_resource :class => 'Message'
   respond_to :html
 
   def new
@@ -23,5 +23,6 @@ class Admin::MessagesController < Admin::ApplicationController
     end
 
     respond_with(@messages, location: admin_messages_path)
+
   end
 end

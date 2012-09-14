@@ -1,5 +1,5 @@
 class Admin::ContactsController < Admin::ApplicationController
-  load_and_authorize_resource :class => "Contact"
+  load_and_authorize_resource :class => 'Contact'
   respond_to :html
 
   def index

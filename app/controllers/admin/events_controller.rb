@@ -1,5 +1,5 @@
 class Admin::EventsController < Admin::ApplicationController
-  load_and_authorize_resource :class => "Event"
+  load_and_authorize_resource :class => 'Event'
   respond_to :html
 
   def index
@@ -7,7 +7,7 @@ class Admin::EventsController < Admin::ApplicationController
   end
 
   def show
-    @event = Event.find params[:id]
+    @event = Event.find(params[:id])
   end
 
   def new
@@ -15,7 +15,7 @@ class Admin::EventsController < Admin::ApplicationController
   end
 
   def create
-    @event = Event.new params[:event]
+    @event = Event.new(params[:event])
     @event.user = current_user
 
     flash[:notice] = t('flash.event_created', name: @event.name) if @event.save
@@ -35,7 +35,7 @@ class Admin::EventsController < Admin::ApplicationController
   end
 
   def edit
-    @event = Event.find params[:id]
+    @event = Event.find(params[:id])
   end
 
   def destroy
