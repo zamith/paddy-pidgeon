@@ -10,6 +10,7 @@
   <% if user_signed_in? %>
     <header>
       <div class="wrapper">
+        <a href="/" id="logo-small">PaddyPidgeon</a>
         <%# role_changer %>
         <%= citygate_nav_links %>
       </div>
@@ -17,9 +18,11 @@
   <% end %>
 
   <div class="wrapper">
-    <a href="/" id="logo">PaddyPidgeon</a>
+    <% if !user_signed_in? %>
+      <a href="/" id="logo-large">PaddyPidgeon</a>
+    <% end %>
 
-    <div id="main-content">
+    <div id="main-content" class="<%= "logo" if !user_signed_in? %>">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
       <% end %>

@@ -50,7 +50,7 @@ header
     vertical-align: -2px
 
 
-#logo
+#logo-large
   background-image: image-url('wings.png')
   background-repeat: no-repeat
   color: #FFF
@@ -61,17 +61,30 @@ header
   width: 95px
 
 
+#logo-small
+  background-image: image-url('wings.png')
+  background-position: 0 -4px
+  background-repeat: no-repeat
+  background-size: 40%
+  float: left
+  padding-left: 70px
+
+
 #main-content
   background-image: image-url('envelope_top.png'), image-url('envelope_bottom.png'), image-url('envelope.png')
   background-position: center top, center bottom, center center
   background-repeat: no-repeat, no-repeat, repeat-y
-  margin-top: 40px
+  margin-top: 120px
   min-height: 280px
   padding: 40px
 
   nav
     background-image: image-url('seal.png')
     background-repeat: no-repeat
+
+
+#main-content.logo
+  margin-top: 45px
 
 
 .list
@@ -121,33 +134,43 @@ form
   margin-top: 20px
 
   a
+    cursor: pointer
     font-size: 0.9em
     margin-right: 10px
     text-align: center
     @include inline-block(none)
 
+  button, .button
+    background-color: #7492A3
+    border: 1px solid rgba(0, 0, 0, 0.3)
+    cursor: pointer
+    font-family: Oxygen, Arial, Sans-Serif
+    font-size: 0.9em
+    margin-right: 10px
+    padding: 4px 14px
+    line-height: 20px
+    text-align: center
+    @include background-image(linear-gradient(top, #FFF, #E6E6E6))
+    @include border-radius(5px)
+    @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05))
+    @include inline-block(middle)
+    @include text-shadow(0 1px 1px #FFF)
+
+  button:hover, .button:hover
+    text-decoration: none
+    @include background-image(linear-gradient(top, #E6E6E6, #FFF))
+
+  button:active, .button:active
+    @include box-shadow(inset 0 1px 5px rgba(0, 0, 0, 0.1))
+
 
 .danger
-  color: #d53240
-
-
-button, .button
-  background-color: #7492A3
-  border: none
-  font-family: Oxygen, Arial, Sans-Serif
-  font-size: 0.9em
-  padding: 10px
-  @include border-radius(5px)
-
-
-button:hover, .button:hover
-  color: #FFF
-  text-decoration: none
+  color: #D53240
 
 
 .details
   li
-    margin-bottom: 10px
+    margin-bottom: 25px
 
   .label
     width: 200px

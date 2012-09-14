@@ -3,6 +3,8 @@
 <%= form_for @message, url: admin_messages_path do |form| %>
   <%= render partial: 'form', locals: { form: form } %>
 
-  <%= form.button t('admin.actions.create') %>
-  <%= link_to t('admin.actions.back'), admin_messages_path %>
+  <fieldset class='actions'>
+    <%= form.button t('admin.actions.create') %>
+    <%= link_to t('admin.actions.back'), admin_messages_path %>
+  </fieldset>
 <% end %>
