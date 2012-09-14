@@ -14,6 +14,7 @@ class Admin::ContactsController < Admin::ApplicationController
       @contact = Contact.new phone_number: number
       @contact.user = current_user
       @contact.group_ids = [params[:group_id]]
+
       at_least_one_created = true if @contact.save
     end
 

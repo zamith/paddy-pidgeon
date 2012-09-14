@@ -6,6 +6,8 @@ class Message < ActiveRecord::Base
 
   validates :user_id, presence: true
 
+  before_save :strip_of_unicode_chars
+
   def send_from_phone
     params = {
       'user' => configatrix.message_sender['username'], 
@@ -30,5 +32,11 @@ class Message < ActiveRecord::Base
     def number_of_messages(text)
       text.size/160 + 1
     end
+  end
+
+  private
+
+  def strip_of_unicode_chars
+    self.text = self.text.parameterize
   end
 end
