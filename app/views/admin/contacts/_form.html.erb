@@ -2,11 +2,13 @@
   <p><%= msg %></p>
 <% end %>
 
-<%= form.label :name %>
-<%= form.text_field :name %>
+<fieldset>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
 
-<%= form.label :email %>
-<%= form.email_field :email %>
+  <%= form.label :email %>
+  <%= form.email_field :email %>
 
-<%= form.label :phone_number %>
-<%= form.phone_field :phone_number, required: 'required', pattern: "(\\+351|00351)?\\d{9}", title: t('admin.contacts.validations.phone_number') %>
+  <%= form.label :phone_number %>
+  <%= form.phone_field :phone_number, required: 'required', pattern: "(\\+351|00351)?\\d{9}", title: t('admin.contacts.validations.phone_number') %>
+</fieldset>

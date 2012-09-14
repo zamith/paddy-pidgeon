@@ -9,7 +9,7 @@
     <% @messages.each do |message| %>
       <tr>
         <td><%= link_to message.name, admin_message_path(message) %></td>
-        <td><i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_message_path(message), confirm: t('admin.actions.confirm'), :method => :delete %></td>
+        <td><i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_message_path(message), confirm: t('admin.actions.confirm'), :method => :delete, class: 'danger' %></td>
       </tr>
     <% end %>
   </tbody>

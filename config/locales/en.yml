@@ -13,6 +13,7 @@ en:
       list_events: "List Events"
       list_groups: "List Groups"
       list_messages: "List Messages"
+      send: "Send"
 
     events:
       edit:
@@ -28,6 +29,15 @@ en:
       show:
         title: "Event Details"
 
+    flash:
+      contact_created: "Contact with phone number %{number} created."
+      contact_edited: "Contact with phone number %{number} edited."
+      event_created: "Event %{name} created."
+      event_edited: "Event %{name} edited."
+      group_created: "Group %{name} created."
+      multiple_messages_sent: "A total of %{number_of_messages} messages was delivered."
+      one_message_sent: "Your message was sent"
+
     groups:
       edit:
         title: "Edit Group"
@@ -39,6 +49,13 @@ en:
         title: "New Group"
       show:
         title: "Group Details"
+
+    helpers:
+      label:
+        message:
+          deliver_date: "Deliver Date"
+          group_id: "Receivers Group"
+          text: "Text"
 
     contacts:
       edit:
@@ -61,22 +78,5 @@ en:
         title: "Messages"
       new:
         title: "New Message"
-        submit: "Send Message"
       show:
         title: "Message Details"
-
-  flash:
-    contact_created: "Contact with phone number %{number} created."
-    contact_edited: "Contact with phone number %{number} edited."
-    event_created: "Event %{name} created."
-    event_edited: "Event %{name} edited."
-    group_created: "Group %{name} created."
-    one_message_sent: "Your message was sent"
-    multiple_messages_sent: "A total of %{number_of_messages} messages was delivered."
-
-  helpers:
-    label:
-      message:
-        deliver_date: "Deliver Date"
-        group_id: "Receivers Group"
-        text: "Text"
