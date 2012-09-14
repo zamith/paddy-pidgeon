@@ -1,8 +1,10 @@
 <h1><%= t('admin.messages.show.title') %></h1>
 
-<ul id='message'>
-  <li><span><%= t('admin.messages.fields.name') %></span><span><%= @message.name %></span></li>
+<ul class='details'>
+  <li><span class='label'><%= t('admin.messages.fields.name') %></span><span><%= @message.name %></span></li>
 </ul>
 
-<%= link_to t('admin.actions.edit'), edit_admin_message_path(@message) %>
-<%= link_to t('admin.actions.back'), admin_messages_path %>
+<div class="actions">
+  <%= link_to t('admin.actions.edit'), edit_admin_message_path(@message), class: 'button' %>
+  <%= link_to t('admin.actions.back'), admin_messages_path %>
+</div>

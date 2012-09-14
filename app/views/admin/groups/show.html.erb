@@ -1,8 +1,10 @@
 <h1><%= t('admin.groups.show.title') %></h1>
 
-<ul id='group'>
-  <li><span><%= t('admin.groups.fields.name') %></span><span><%= @group.name %></span></li>
+<ul class='details'>
+  <li><span class='label'><%= t('admin.groups.fields.name') %></span><span><%= @group.name %></span></li>
 </ul>
 
-<%= link_to t('admin.actions.edit'), edit_admin_group_path(@group) %>
-<%= link_to t('admin.actions.back'), admin_groups_path %>
+<div class="actions">
+  <%= link_to t('admin.actions.edit'), edit_admin_group_path(@group), class: 'button' %>
+  <%= link_to t('admin.actions.back'), admin_groups_path %>
+</div>
