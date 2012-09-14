@@ -9,7 +9,11 @@ PaddyPidgeon::Application.routes.draw do
     resources :messages
     resources :contacts
     resources :events
-    resources :groups
+    resources :groups do
+      collection do
+        get :available
+      end
+    end
     resources :messages
   end
 

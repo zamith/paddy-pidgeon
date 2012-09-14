@@ -11,4 +11,7 @@
 
   <%= form.label :phone_number %>
   <%= form.phone_field :phone_number, required: 'required', pattern: "(\\+351|00351)?\\d{9}", title: t('admin.contacts.validations.phone_number') %>
+
+  <%= label_tag :groups %>
+  <%= text_field_tag :groups %>
 </fieldset>

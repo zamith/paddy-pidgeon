@@ -9,6 +9,12 @@ $ ->
     keydown: ->
       messages_counter.$field.on 'keydown', messages_counter.count
 
+    paste: ->
+      messages_counter.$field.on 'paste', messages_counter.count
+
+    cut: ->
+      messages_counter.$field.on 'cut', messages_counter.count
+
     init: ->
       messages_counter.keydown()
       messages_counter.paste()
