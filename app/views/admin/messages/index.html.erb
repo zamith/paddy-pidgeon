@@ -1,10 +1,19 @@
-<h1 class="page-header"><%= t("admin.messages.index.title") %></h1>
+<h1><%= t('admin.messages.index.title') %></h1>
 
-<ul id="messages">
-  <% @messages.each do |message| %>
-    <li><%=  %></li>
-  <% end %>
-</ul>
+<table id='messages'>
+  <thead>
+    <th><%= t('admin.messages.fields.name') %></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= link_to message.name, admin_message_path(message) %></td>
+        <td><%= link_to t('admin.actions.delete'), admin_message_path(message), class: 'icon-trash', confirm: t('admin.actions.confirm'), :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to t('admin.messages.new.title'), new_admin_message_path %>
-<%= link_to t('admin.messages.back'), root_path %>
+<%= link_to t('admin.actions.back'), root_path %>

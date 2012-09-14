@@ -1,5 +1,5 @@
 class Admin::MessagesController < Admin::ApplicationController
-  load_and_authorize_resource :class => "Message"
+  load_and_authorize_resource :class => 'Message'
   respond_to :html
 
   def new
@@ -17,7 +17,7 @@ class Admin::MessagesController < Admin::ApplicationController
       #delivered = false unless message.send_from_phone
     end
 
-    flash[:notice] = t("flash.messages_sent", number_of_messages: messages.size) if delivered
+    flash[:notice] = t('flash.messages_sent', number_of_messages: messages.size) if delivered
     #respond_with(:admin, messages)
   end
 end
