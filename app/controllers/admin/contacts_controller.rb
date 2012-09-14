@@ -17,6 +17,8 @@ class Admin::ContactsController < Admin::ApplicationController
   def create
     @contact = Contact.new params[:contact]
     @contact.user = current_user
+    @contact.group_ids = [1]
+    p @contact.groups 
 
     flash[:notice] = t('flash.contact_created', number: @contact.phone_number) if @contact.save
     respond_with(:admin, @contact)
