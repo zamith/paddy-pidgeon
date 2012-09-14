@@ -2,6 +2,9 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+
+  # Admin
+
   admin:
     actions:
       back: "Back"
@@ -14,6 +17,28 @@ en:
       list_groups: "List Groups"
       list_messages: "List Messages"
       send: "Send"
+
+    contacts:
+      edit:
+        title: "Edit Contact"
+      fields:
+        email: "Email"
+        name: "Name"
+        phone_number: "Phone Number"
+      index:
+        title: "Contacts"
+      mass_add:
+        labels:
+          group: "Group"
+          numbers: "Phone Numbers"
+        title: "Add Multiple Contacts"
+      new:
+        title: "New Contact"
+      show:
+        title: "Contact Details"
+      validations:
+        phone_number: "Insert a nine digit number."
+
 
     events:
       edit:
@@ -29,15 +54,6 @@ en:
       show:
         title: "Event Details"
 
-    flash:
-      contact_created: "Contact with phone number %{number} created."
-      contact_edited: "Contact with phone number %{number} edited."
-      event_created: "Event %{name} created."
-      event_edited: "Event %{name} edited."
-      group_created: "Group %{name} created."
-      multiple_messages_sent: "A total of %{number_of_messages} messages was delivered."
-      one_message_sent: "Your message was sent"
-
     groups:
       edit:
         title: "Edit Group"
@@ -50,29 +66,6 @@ en:
       show:
         title: "Group Details"
 
-    helpers:
-      label:
-        message:
-          deliver_date: "Deliver Date"
-          group_id: "Receivers Group"
-          text: "Text"
-
-    contacts:
-      edit:
-        title: "Edit Contact"
-      fields:
-        email: "Email"
-        name: "Name"
-        phone_number: "Phone Number"
-      index:
-        title: "Contacts"
-      new:
-        title: "New Contact"
-      show:
-        title: "Contact Details"
-      validations:
-        phone_number: "Insert a nine digit number."
-
     messages:
       index:
         title: "Messages"
@@ -80,3 +73,23 @@ en:
         title: "New Message"
       show:
         title: "Message Details"
+
+  # Generic
+
+  flash:
+      contact_created: "Contact with phone number %{number} created."
+      contact_edited: "Contact with phone number %{number} edited."
+      event_created: "Event %{name} created."
+      event_edited: "Event %{name} edited."
+      group_created: "Group %{name} created."
+      mass_contacts_created: "Created contacts."
+      mass_update_error: "There was an error creating your contacts."
+      multiple_messages_sent: "A total of %{number_of_messages} messages was delivered."
+      one_message_sent: "Your message was sent"
+
+  helpers:
+      label:
+        message:
+          deliver_date: "Deliver Date"
+          group_id: "Receivers Group"
+          text: "Text"

@@ -2,6 +2,29 @@ class Admin::ContactsController < Admin::ApplicationController
   load_and_authorize_resource :class => 'Contact'
   respond_to :html
 
+  def mass_add
+    @groups = Group.find_all_by_user_id current_user.id
+  end
+
+  def mass_update
+    @numbers = params[:numbers].split /\D+/
+
+    at_least_one_created = false
+    @numbers.each do |number|
+      @contact = Contact.new phone_number: number
+      @contact.user = current_user
+      @contact.group_ids = [params[:group_id]]
+      at_least_one_created = true if @contact.save
+    end
+
+    if at_least_one_created
+      flash[:notice] = t('flash.mass_contacts_created') 
+    else
+      flash[:error] = t('flash.mass_update_error')
+    end
+    redirect_to admin_contacts_path
+  end
+
   def index
     @contact = Contact.all
   end

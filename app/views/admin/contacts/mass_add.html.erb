@@ -1,0 +1,15 @@
+<h1><%= t('admin.contacts.mass_add.title') %></h1>
+
+<%= form_tag mass_add_admin_contacts_path do %>
+
+  <%= label_tag :numbers, t("admin.contacts.mass_add.labels.numbers") %>
+  <%= text_area_tag :numbers %>
+
+  <%= label_tag :group_id, t("admin.contacts.mass_add.labels.group") %>
+  <%= select_tag :group_id, options_from_collection_for_select(Group.all, 'id', 'name') %>
+
+  <fieldset class='actions'>
+    <%= button_tag t('admin.actions.create') %>
+    <%= link_to t('admin.actions.back'), admin_contacts_path %>
+  </fieldset>
+<% end %>
