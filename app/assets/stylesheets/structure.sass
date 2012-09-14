@@ -37,8 +37,8 @@ header
   text-align: right
 
   li
-    display: inline-block
     margin-left: 5px
+    @include inline-block(none)
 
   a
     color: #F2F2F2
@@ -88,31 +88,59 @@ header
     background-color: rgba(117, 147, 163, 0.2)
 
   td, th
-    display: inline-block
     margin: 10px
     width: 160px
+    @include inline-block(none)
 
   i
     padding-right: 5px
+
+
+form
+
+  input, label
+    float: left
+    margin-bottom: 5px
+
+  input
+    border: 1px solid rgba(0, 0, 0, 0.4)
+    clear: right
+    font-size: 0.8em
+    height: 20px
+    padding: 5px
+    width: 250px
+    @include border-radius(5px)
+
+  label
+    clear: left
+    padding-top: 8px
+    width: 200px
 
 
 .actions
   margin-top: 20px
 
   a
-    display: inline-block
     font-size: 0.9em
     margin-right: 10px
     text-align: center
+    @include inline-block(none)
 
 
-.button
+.danger
+  color: #d53240
+
+
+button, .button
   background-color: #7492A3
-  border-radius: 5px
+  border: none
+  font-family: Oxygen, Arial, Sans-Serif
+  font-size: 0.9em
   padding: 10px
+  @include border-radius(5px)
 
 
-.button:hover
+button:hover, .button:hover
   color: #FFF
   text-decoration: none
 
@@ -122,8 +150,8 @@ header
     margin-bottom: 10px
 
   .label
-    display: inline-block
     width: 200px
+    @include inline-block(none)
 
 
 footer

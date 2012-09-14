@@ -2,11 +2,13 @@
   <p><%= msg %></p>
 <% end %>
 
-<%= form.label :name %>
-<%= form.text_field :name, required: 'required' %>
+<fieldset>
+  <%= form.label :name %>
+  <%= form.text_field :name, required: 'required' %>
 
-<%= form.label :start_date %>
-<%= form.text_field :start_date %>
+  <%= form.label :start_date %>
+  <%= form.text_field :start_date %>
 
-<%= form.label :end_date %>
-<%= form.text_field :end_date %>
+  <%= form.label :end_date %>
+  <%= form.text_field :end_date %>
+</fieldset>

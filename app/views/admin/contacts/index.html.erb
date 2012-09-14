@@ -13,7 +13,7 @@
         <td><%= link_to contact.phone_number, admin_contact_path(contact) %></td>
         <td><%= contact.name %></td>
         <td><%= contact.email %></td>
-        <td><i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_contact_path(contact), confirm: t('admin.actions.confirm'), :method => :delete %></td>
+        <td><i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_contact_path(contact), confirm: t('admin.actions.confirm'), :method => :delete, class: 'danger' %></td>
       </tr>
     <% end %>
   </tbody>
