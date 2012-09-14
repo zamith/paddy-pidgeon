@@ -12,13 +12,13 @@ class Admin::ContactsController < Admin::ApplicationController
 
   def new
     @contact = Contact.new
+    @groups = Group.find_all_by_user_id current_user.id
   end
 
   def create
     @contact = Contact.new params[:contact]
     @contact.user = current_user
     @contact.group_ids = [1]
-    p @contact.groups 
 
     flash[:notice] = t('flash.contact_created', number: @contact.phone_number) if @contact.save
     respond_with(:admin, @contact)
@@ -38,6 +38,7 @@ class Admin::ContactsController < Admin::ApplicationController
 
   def edit
     @contact = Contact.find(params[:id])
+    @groups = Group.find_all_by_user_id current_user.id
   end
 
   def destroy

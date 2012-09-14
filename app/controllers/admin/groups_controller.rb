@@ -1,6 +1,7 @@
 class Admin::GroupsController < Admin::ApplicationController
   load_and_authorize_resource :class => 'Group'
-  respond_to :html
+  respond_to :html, except: [:available]
+  respond_to :json, only:   [:available]
 
   def index
     @group = Group.all
@@ -43,5 +44,10 @@ class Admin::GroupsController < Admin::ApplicationController
     @group.destroy
 
     redirect_to admin_groups_path
+  end
+
+  def available
+    @groups = Group.find_all_by_user_id(current_user.id, select: [:id, :name])
+    respond_with @groups
   end
 end

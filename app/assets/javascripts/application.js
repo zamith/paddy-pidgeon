@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require citygate
 //= require messages
+//= require jquery.tokeninput
+//= require tokeninput
