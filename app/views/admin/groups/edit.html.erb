@@ -4,7 +4,7 @@
   <%= render partial: 'form', locals: { form: form } %>
 
   <fieldset class='actions'>
-    <%= form.submit t('admin.actions.edit') %>
+    <%= form.button t('admin.actions.edit') %>
     <%= link_to t('admin.actions.back'), admin_group_path(@group) %>
   </fieldset>
 <% end %>

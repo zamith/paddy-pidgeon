@@ -2,7 +2,6 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-
   # Admin
 
   admin:
@@ -73,6 +72,22 @@ en:
         title: "New Message"
       show:
         title: "Message Details"
+
+  registrations:
+    actions:
+      sign_up: "Sign up"
+    sign_up:
+      title: "Sign Up"
+
+  sessions:
+    actions:
+      sign_in: "Sign in"
+    sign_in:
+      title: "Sign In"
+
+  users:
+    show:
+      title: "Profile Details"
 
   # Generic
 
