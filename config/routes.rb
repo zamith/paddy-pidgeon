@@ -7,7 +7,12 @@ PaddyPidgeon::Application.routes.draw do
 
   namespace :admin do
     resources :messages
-    resources :contacts
+    resources :contacts do
+      collection do
+        get  :mass_add
+        post :mass_add, to: "contacts#mass_update"
+      end
+    end
     resources :events
     resources :groups do
       collection do
