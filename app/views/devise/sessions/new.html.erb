@@ -1,0 +1,20 @@
+<h1><%= t('sessions.sign_in.title') %></h1>
+
+<%= form_for resource, :as => resource_name, :url => session_path(resource_name) do |f| %>
+  <fieldset>
+    <%= f.label :email %>
+    <%= f.email_field :email, :required => true %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, :required => true %>
+
+    <% if devise_mapping.rememberable? -%>
+      <%= f.label :remember_me %><%= f.check_box :remember_me %>
+    <% end -%>
+  </fieldset>
+
+  <fieldset class='actions'>
+    <%= f.button t('sessions.actions.sign_in') %>
+    <%= link_to t('admin.actions.back'), root_path %>
+  </fieldset>
+<% end %>
