@@ -63,11 +63,10 @@ header
 
 #logo-small
   background-image: image-url('wings.png')
-  background-position: 0 -4px
   background-repeat: no-repeat
   background-size: 40%
   float: left
-  padding-left: 70px
+  padding-left: 60px
 
 
 #main-content
@@ -115,7 +114,7 @@ form
     margin-left: 0
     margin-top: 5px
 
-  input, label
+  input, label, select, textarea
     float: left
     margin-bottom: 5px
 
@@ -129,9 +128,21 @@ form
     @include border-radius(5px)
 
   label
-    clear: left
+    clear: both
     padding-top: 8px
     width: 200px
+
+  textarea
+    font-size: 0.8em
+    max-width: 535px
+    width: 535px
+
+  .counter
+    background-color: transparent
+    border: none
+    float: right
+    text-align: right
+    width: 50px
 
 
 .actions
@@ -156,7 +167,7 @@ form
     text-align: center
     @include background-image(linear-gradient(top, #FFF, #E6E6E6))
     @include border-radius(5px)
-    @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05))
+    @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.1))
     @include inline-block(middle)
     @include text-shadow(0 1px 1px #FFF)
 
@@ -165,7 +176,7 @@ form
     @include background-image(linear-gradient(top, #E6E6E6, #FFF))
 
   button:active, .button:active
-    @include box-shadow(inset 0 1px 5px rgba(0, 0, 0, 0.1))
+    @include box-shadow(inset 0 1px 4px rgba(0, 0, 0, 0.4))
 
 
 .danger

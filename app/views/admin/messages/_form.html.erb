@@ -3,13 +3,14 @@
 <% end %>
 
 <fieldset>
+  <%= text_field_tag 'no_of_messages', '0', class: 'counter' %>
+
   <%= form.label :text %>
-  <%= form.text_area :text %>
-  <%= text_field_tag 'no_of_messages' %>
+  <%= form.text_area :text, rows: 10 %>
 
   <%= form.label :deliver_date %>
-  <%= form.date_select :deliver_date %>
+  <%= form.date_select :deliver_date, start_year: Time.now.year, end_year: Time.now.year + 1 %>
 
   <%= form.label :group_id %>
-  <%= form.select :group_id, options_from_collection_for_select(Group.all, 'id', 'name')  %>
+  <%= form.select :group_id, options_from_collection_for_select(Group.all, 'id', 'name'), prompt: 'None' %>
 </fieldset>
