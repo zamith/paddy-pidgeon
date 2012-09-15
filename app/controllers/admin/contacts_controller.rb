@@ -1,6 +1,13 @@
 class Admin::ContactsController < Admin::ApplicationController
   load_and_authorize_resource :class => 'Contact'
-  respond_to :html
+  respond_to :html, except: [:available]
+  respond_to :json, only:   [:available]
+
+  def available
+    # Show only the contacts with a name
+    @contacts = Contact.find_all_by_user_id(current_user.id, select: [:id, :name]).delete_if{|c|c.name.blank?}
+    respond_with @contacts
+  end
 
   def mass_add
     @groups = Group.find_all_by_user_id current_user.id

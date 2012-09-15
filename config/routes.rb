@@ -7,19 +7,23 @@ PaddyPidgeon::Application.routes.draw do
 
   namespace :admin do
     resources :messages
+
     resources :contacts do
       collection do
+        get :available
+
         get  :mass_add
         post :mass_add, to: "contacts#mass_update"
       end
     end
+
     resources :events
+
     resources :groups do
       collection do
         get :available
       end
     end
-    resources :messages
   end
 
   # The priority is based upon order of creation:

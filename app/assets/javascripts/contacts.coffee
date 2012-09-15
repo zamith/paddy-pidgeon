@@ -10,7 +10,7 @@ $ ->
         minChars: 2,
         onAdd: tokeninput.addGroup,
         disableCache: true,
-        noResultsText: "No unselected users found...",
+        noResultsText: "No unselected groups found...",
         hintText: "Type a user name to be selected..."
 
     getGroups: ->

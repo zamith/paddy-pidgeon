@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require citygate
-//= require messages
 //= require jquery.tokeninput
-//= require tokeninput
+//= require messages
+//= require contacts
+//= require groups
