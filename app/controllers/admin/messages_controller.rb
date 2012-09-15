@@ -25,6 +25,5 @@ class Admin::MessagesController < Admin::ApplicationController
     end
 
     respond_with(@messages, location: admin_messages_path)
-
   end
 end

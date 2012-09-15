@@ -19,7 +19,8 @@ class Admin::EventsController < Admin::ApplicationController
     @event.user = current_user
 
     flash[:notice] = t('flash.event_created', name: @event.name) if @event.save
-    respond_with(:admin, @event)
+
+    respond_with(@event, location: admin_events_path)
   end
 
   def update
@@ -31,7 +32,7 @@ class Admin::EventsController < Admin::ApplicationController
       # fail
     end
 
-    redirect_to admin_event_path(@event)
+    respond_with(@event, location: admin_event_path(@event))
   end
 
   def edit

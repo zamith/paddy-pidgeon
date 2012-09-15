@@ -52,7 +52,8 @@ class Admin::ContactsController < Admin::ApplicationController
     @contact.group_ids = [1]
 
     flash[:notice] = t('flash.contact_created', number: @contact.phone_number) if @contact.save
-    respond_with(:admin, @contact)
+
+    respond_with(@contact, location: admin_contacts_path)
   end
 
   def update
@@ -64,7 +65,7 @@ class Admin::ContactsController < Admin::ApplicationController
       # fail
     end
 
-    redirect_to admin_contact_path(@contact)
+    respond_with(@contact, location: admin_contact_path(@contact))
   end
 
   def edit
