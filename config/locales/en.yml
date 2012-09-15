@@ -63,7 +63,7 @@ en:
       fields:
         email: "Email"
         name: "Name"
-        phone_number: "Phone Number"
+        phone_number: "Phone number"
       index:
         title: "Contacts"
       new:
@@ -80,3 +80,19 @@ en:
         title: "New Message"
       show:
         title: "Message Details"
+
+  registrations:
+    actions:
+      sign_up: "Sign up"
+    sign_up:
+      title: "Sign Up"
+
+  sessions:
+    actions:
+      sign_in: "Sign in"
+    sign_in:
+      title: "Sign In"
+
+  users:
+    show:
+      title: "Profile Details"
