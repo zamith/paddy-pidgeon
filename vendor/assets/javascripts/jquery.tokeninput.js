@@ -26,6 +26,7 @@ var DEFAULT_SETTINGS = {
     searchingText: "Searching...",
     deleteText: "&times;",
     animateDropdown: true,
+    theme: 'facebook',
 
 	// Tokenization settings
     tokenLimit: null,

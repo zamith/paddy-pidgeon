@@ -20,7 +20,8 @@ class Admin::GroupsController < Admin::ApplicationController
     @group.user = current_user
 
     flash[:notice] = t('flash.group_created', name: @group.name) if @group.save
-    respond_with(:admin, @group)
+
+    respond_with(@group, location: admin_groups_path)
   end
 
   def update
@@ -32,7 +33,7 @@ class Admin::GroupsController < Admin::ApplicationController
       # fail
     end
 
-    redirect_to admin_group_path(@group)
+    respond_with(@group, location: admin_group_path(@group))
   end
 
   def edit

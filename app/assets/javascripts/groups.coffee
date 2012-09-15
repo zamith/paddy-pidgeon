@@ -10,8 +10,8 @@ $ ->
         minChars: 2,
         onAdd: tokeninput.addContact,
         disableCache: true,
-        noResultsText: "No unselected contacts found...",
-        hintText: "Type a user name to be selected..."
+        noResultsText: "No contacts found.",
+        hintText: "Type in a user name."
 
     getContacts: ->
       $.getJSON "/admin/contacts/available", (data) ->

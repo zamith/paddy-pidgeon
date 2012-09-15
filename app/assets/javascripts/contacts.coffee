@@ -10,8 +10,8 @@ $ ->
         minChars: 2,
         onAdd: tokeninput.addGroup,
         disableCache: true,
-        noResultsText: "No unselected groups found...",
-        hintText: "Type a user name to be selected..."
+        noResultsText: "No groups found.",
+        hintText: "Type in a group name."
 
     getGroups: ->
       $.getJSON "/admin/groups/available", (data) ->
