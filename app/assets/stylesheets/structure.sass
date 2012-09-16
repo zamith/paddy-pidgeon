@@ -90,8 +90,11 @@ header
   font-size: 0.9em
   width: 742px
 
-  thead tr
-    background-color: #7492A3
+  thead
+    color: #FFF
+
+    tr
+      background-color: #7492A3
 
   tbody tr:nth-child(odd)
     background-color: rgba(117, 147, 163, 0.5)
@@ -180,7 +183,7 @@ form
 
 
 .danger
-  color: #D53240
+  color: #C53939
 
 
 .details
@@ -190,6 +193,14 @@ form
   .label
     width: 200px
     @include inline-block(none)
+
+
+#flash_notice
+  color: #323232
+  font-size: 0.9em
+  margin-bottom: 20px
+  padding: 10px
+  background-color: rgba(68, 177, 9, 0.3)
 
 
 footer
