@@ -20,9 +20,9 @@ $ ->
         messages_counter.count messages_counter.$field.val().length - event.originalEvent.clipboardData.getData('Text').length
 
     init: ->
+      messages_counter.count(messages_counter.$field.val().length)
       messages_counter.keyup()
       messages_counter.paste()
       messages_counter.cut()
-      $("#no_of_messages").val(0)
 
   messages_counter.init()

@@ -8,7 +8,7 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= link_to truncate(message.text, length: 30), admin_message_path(message) %></td>
+        <td><%= link_to truncate(message.text, length: 25), admin_message_path(message) %></td>
         <td><i class='icon-pencil'></i><%= link_to t('admin.actions.edit'), edit_admin_message_path(message) %><i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_message_path(message), confirm: t('admin.actions.confirm'), :method => :delete, class: 'danger' %></td>
       </tr>
     <% end %>

@@ -19,7 +19,11 @@ class Admin::GroupsController < Admin::ApplicationController
     @group = Group.new(params[:group])
     @group.user = current_user
 
-    flash[:notice] = t('flash.group_created', name: @group.name) if @group.save
+    if @group.save
+      flash[:notice] = t('flash.group_created', name: @group.name)
+    else
+      flash[:error] = @group.errors.full_messages.last
+    end
 
     respond_with(@group, location: admin_groups_path)
   end
@@ -30,7 +34,7 @@ class Admin::GroupsController < Admin::ApplicationController
     if @group.update_attributes(params[:group])
       flash[:notice] = t('flash.group_edited', name: @group.name)
     else
-      # fail
+      flash[:error] = @group.errors.full_messages.last
     end
 
     respond_with(@group, location: admin_group_path(@group))

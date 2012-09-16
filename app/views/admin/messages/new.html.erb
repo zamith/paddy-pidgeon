@@ -4,7 +4,7 @@
   <%= render partial: 'form', locals: { form: form } %>
 
   <fieldset class='actions'>
-    <%= link_to t('admin.actions.create_and_send'), root_path, class: 'button' %>
+    <%= form.button t('admin.actions.create_and_send'), name: 'create_and_send' %>
     <%= form.button t('admin.actions.create') %>
     <%= link_to t('admin.actions.back'), admin_messages_path %>
   </fieldset>

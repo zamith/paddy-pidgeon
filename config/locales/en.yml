@@ -99,15 +99,16 @@ en:
   flash:
       contact_created: "Created contact with phone number %{number}."
       contact_edited: "Edited contact with phone number %{number}."
+      error_sending_message: "There was an error sending your message"
       event_created: "Created event %{name}."
       event_edited: "Edited event %{name}."
       group_created: "Created group %{name}."
       group_edited: "Edited group %{name}."
-      message_created: "Created message %⁄{text}."
-      message_edited: "Edited message %⁄{text}."
+      message_created: "Created message."
+      message_edited: "Edited message."
       mass_contacts_created: "Created contacts."
       mass_update_error: "There was an error creating your contacts."
-      multiple_messages_sent: "A total of %{number_of_messages} messages was delivered."
+      multiple_messages_sent: "A total of %{number_of_messages} messages were delivered."
       one_message_sent: "Your message was sent"
 
   helpers:
