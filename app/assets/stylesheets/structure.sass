@@ -195,12 +195,21 @@ form
     @include inline-block(none)
 
 
-#flash_notice
+#flash_notice, #flash_alert
   color: #323232
   font-size: 0.9em
   margin-bottom: 20px
   padding: 10px
-  background-color: rgba(68, 177, 9, 0.3)
+
+
+#flash_notice
+  background-color: rgba(116, 230, 0, 0.5)
+
+#flash_alert
+  background-color: rgba(255, 182, 0, 0.5)
+
+#flash_error
+  background-color: rgba(188, 29, 29, 0.5)
 
 
 footer
