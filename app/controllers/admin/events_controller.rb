@@ -3,7 +3,7 @@ class Admin::EventsController < Admin::ApplicationController
   respond_to :html
 
   def index
-    @event = Event.all
+    @event = Event.find_all_by_user_id current_user.id
   end
 
   def show
@@ -18,7 +18,11 @@ class Admin::EventsController < Admin::ApplicationController
     @event = Event.new(params[:event])
     @event.user = current_user
 
-    flash[:notice] = t('flash.event_created', name: @event.name) if @event.save
+    if @event.save
+      flash[:notice] = t('flash.event_created', name: @event.name)
+    else
+      flash[:error] = @event.errors.full_messages.last
+    end
 
     respond_with(@event, location: admin_events_path)
   end
@@ -29,7 +33,7 @@ class Admin::EventsController < Admin::ApplicationController
     if @event.update_attributes(params[:event])
       flash[:notice] = t('flash.event_edited', name: @event.name)
     else
-      # fail
+      flash[:error] = @event.errors.full_messages.last
     end
 
     respond_with(@event, location: admin_event_path(@event))

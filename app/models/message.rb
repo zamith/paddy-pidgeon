@@ -23,9 +23,8 @@ class Message < ActiveRecord::Base
 
   class << self
     def divide_text(original_message, limit=160)
-      original_message[:text].split(/(.{#{limit}})/).collect do |splitted_text|
-        deliver_date = Time.new original_message["deliver_date(1i)"], original_message["deliver_date(2i)"], original_message["deliver_date(3i)"]
-        Message.new deliver_date: deliver_date, text: splitted_text unless splitted_text.blank?
+      original_message[:text].parameterize.split(/(.{#{limit}})/).collect do |splitted_text|
+        Message.new text: splitted_text unless splitted_text.blank?
       end.compact
     end
 

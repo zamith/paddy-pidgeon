@@ -6,6 +6,7 @@ class Admin::ContactsController < Admin::ApplicationController
   def available
     # Show only the contacts with a name
     @contacts = Contact.find_all_by_user_id(current_user.id, select: [:id, :name]).delete_if{|c|c.name.blank?}
+
     respond_with @contacts
   end
 
@@ -34,7 +35,7 @@ class Admin::ContactsController < Admin::ApplicationController
   end
 
   def index
-    @contact = Contact.all
+    @contact = Contact.find_all_by_user_id current_user.id
   end
 
   def show
@@ -51,7 +52,11 @@ class Admin::ContactsController < Admin::ApplicationController
     @contact.user = current_user
     @contact.group_ids = params[:groups].split(",")
 
-    flash[:notice] = t('flash.contact_created', number: @contact.phone_number) if @contact.save
+    if @contact.save
+      flash[:notice] = t('flash.contact_created', number: @contact.phone_number)
+    else
+      flash[:error] = @contact.errors.full_messages.last
+    end
 
     respond_with(@contact, location: admin_contacts_path)
   end
@@ -62,7 +67,7 @@ class Admin::ContactsController < Admin::ApplicationController
     if @contact.update_attributes(params[:contact])
       flash[:notice] = t('flash.contact_edited', number: @contact.phone_number)
     else
-      # fail
+      flash[:error] = @contact.errors.full_messages.last
     end
 
     respond_with(@contact, location: admin_contact_path(@contact))
