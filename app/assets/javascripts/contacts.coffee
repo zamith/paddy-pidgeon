@@ -23,6 +23,6 @@ $ ->
     init: ->
       tokeninput.getGroups()
 
-  tokeninput.init() if window.location.pathname == "/admin/contacts/new"
+  tokeninput.init() if window.location.pathname.indexOf("contacts") != -1
 
     
