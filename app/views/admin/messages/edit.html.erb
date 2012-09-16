@@ -1,6 +1,6 @@
-<h1><%= t('admin.events.edit.title') %></h1>
+<h1><%= t('admin.messages.edit.title') %></h1>
 
-<%= form_for @event, url: admin_event_path(@event), method: :put do |form| %>
+<%= form_for @message, url: admin_message_path(@message), method: :put do |form| %>
   <%= render partial: 'form', locals: { form: form } %>
 
   <fieldset class='actions'>

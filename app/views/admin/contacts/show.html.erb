@@ -4,6 +4,7 @@
   <li><span class='label'><%= t('admin.contacts.fields.phone_number') %></span><span><%= @contact.phone_number %></span></li>
   <li><span class='label'><%= t('admin.contacts.fields.name') %></span><span><%= @contact.name %></span></li>
   <li><span class='label'><%= t('admin.contacts.fields.email') %></span><span><%= @contact.email %></span></li>
+
   <% unless @contact.groups.empty? %>
     <li>
       <span class='label'><%= t('admin.contacts.fields.groups') %></span>

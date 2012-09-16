@@ -2,6 +2,17 @@
 
 <ul class='details'>
   <li><span class='label'><%= t('admin.groups.fields.name') %></span><span><%= @group.name %></span></li>
+
+  <% unless @group.contacts.empty? %>
+    <li>
+      <span class='label'><%= t('admin.groups.fields.contacts') %></span>
+      <ul>
+        <% @group.contacts.each do |contact| %>
+          <li><span><%= contact.phone_number %></span></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
 </ul>
 
 <div class="actions">

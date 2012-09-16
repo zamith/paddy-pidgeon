@@ -107,6 +107,9 @@ header
     width: 160px
     @include inline-block(none)
 
+  td a
+    margin-right: 15px
+
   i
     padding-right: 5px
 
@@ -195,21 +198,21 @@ form
     @include inline-block(none)
 
 
-#flash_notice, #flash_alert
+#flash_alert, #flash_error, #flash_notice
   color: #323232
   font-size: 0.9em
   margin-bottom: 20px
   padding: 10px
 
 
-#flash_notice
-  background-color: rgba(116, 230, 0, 0.5)
-
 #flash_alert
-  background-color: rgba(255, 182, 0, 0.5)
+  background-color: rgba(217, 186, 71, 0.6)
 
 #flash_error
-  background-color: rgba(188, 29, 29, 0.5)
+  background-color: rgba(217, 88, 71, 0.6)
+
+#flash_notice
+  background-color: rgba(138, 197, 65, 0.6)
 
 
 footer

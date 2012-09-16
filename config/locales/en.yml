@@ -9,6 +9,7 @@ en:
       back: "Back"
       confirm: "Are you sure?"
       create: "Create"
+      create_and_send: "Create and Send"
       delete: "Delete"
       edit: "Edit"
       list_contacts: "List Contacts"
@@ -66,6 +67,10 @@ en:
         title: "Group Details"
 
     messages:
+      edit:
+        title: "Edit Message"
+      fields:
+        text: "Text"
       index:
         title: "Messages"
       new:
@@ -92,11 +97,14 @@ en:
   # Generic
 
   flash:
-      contact_created: "Contact with phone number %{number} created."
-      contact_edited: "Contact with phone number %{number} edited."
-      event_created: "Event %{name} created."
-      event_edited: "Event %{name} edited."
-      group_created: "Group %{name} created."
+      contact_created: "Created contact with phone number %{number}."
+      contact_edited: "Edited contact with phone number %{number}."
+      event_created: "Created event %{name}."
+      event_edited: "Edited event %{name}."
+      group_created: "Created group %{name}."
+      group_edited: "Edited group %{name}."
+      message_created: "Created message %⁄{text}."
+      message_edited: "Edited message %⁄{text}."
       mass_contacts_created: "Created contacts."
       mass_update_error: "There was an error creating your contacts."
       multiple_messages_sent: "A total of %{number_of_messages} messages was delivered."

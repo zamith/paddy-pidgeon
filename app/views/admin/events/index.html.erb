@@ -13,7 +13,7 @@
         <td><%= link_to event.name, admin_event_path(event) %></td>
         <td><%= event.start_date %></td>
         <td><%= event.end_date %></td>
-        <td><i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_event_path(event), confirm: t('admin.actions.confirm'), :method => :delete, class: 'danger' %></td>
+        <td><i class='icon-pencil'></i><%= link_to t('admin.actions.edit'), edit_admin_event_path(event) %><i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_event_path(event), confirm: t('admin.actions.confirm'), :method => :delete, class: 'danger' %></td>
       </tr>
     <% end %>
   </tbody>
