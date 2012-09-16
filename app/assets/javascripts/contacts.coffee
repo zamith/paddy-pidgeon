@@ -1,6 +1,7 @@
 $ ->
   tokeninput =
     $field: $("#groups")
+    loaded: false
 
     addGroup: (group) ->
       console.log group
@@ -14,12 +15,14 @@ $ ->
         hintText: "Type in a group name."
 
     getGroups: ->
-      $.getJSON "/admin/groups/available", (data) ->
-        tokeninput.inputify data
+      if not tokeninput.loaded
+        $.getJSON "/admin/groups/available", (data) ->
+          tokeninput.inputify data
+          tokeninput.loaded = true
 
     init: ->
       tokeninput.getGroups()
 
-  tokeninput.init()
+  tokeninput.init() if window.location.pathname == "/admin/contacts/new"
 
     

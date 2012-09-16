@@ -38,7 +38,7 @@ class Admin::ContactsController < Admin::ApplicationController
   end
 
   def show
-    @contact = Contact.find(params[:id])
+    @contact = Contact.includes(:groups).find(params[:id])
   end
 
   def new
@@ -49,7 +49,7 @@ class Admin::ContactsController < Admin::ApplicationController
   def create
     @contact = Contact.new params[:contact]
     @contact.user = current_user
-    @contact.group_ids = [1]
+    @contact.group_ids = params[:groups].split(",")
 
     flash[:notice] = t('flash.contact_created', number: @contact.phone_number) if @contact.save
 

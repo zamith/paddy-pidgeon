@@ -1,6 +1,7 @@
 $ ->
   tokeninput =
     $field: $("#contacts")
+    loaded: false
 
     addContact: (contact) ->
       console.log contact
@@ -14,12 +15,14 @@ $ ->
         hintText: "Type in a user name."
 
     getContacts: ->
-      $.getJSON "/admin/contacts/available", (data) ->
-        tokeninput.inputify data
+      if not tokeninput.loaded
+        $.getJSON "/admin/contacts/available", (data) ->
+          tokeninput.inputify data
+          tokeninput.loaded = false
 
     init: ->
       tokeninput.getContacts()
 
-  tokeninput.init()
+  tokeninput.init() if window.location.pathname == "/admin/groups/new"
 
     
