@@ -3,20 +3,24 @@ $ ->
     $field: $("#message_text")
     $counter: $("#no_of_messages")
 
-    count: (event) ->
-      messages_counter.$counter.val(Math.floor(messages_counter.$field.val().length/160)+1)
+    count: (size) ->
+      no_chars = if messages_counter.$field.val() == "" then 0 else Math.floor(size/160)+1
+      messages_counter.$counter.val(no_chars)
 
-    keydown: ->
-      messages_counter.$field.on 'keydown', messages_counter.count
+    keyup: ->
+      messages_counter.$field.on 'keyup', (event) ->
+        messages_counter.count messages_counter.$field.val().length
 
     paste: ->
-      messages_counter.$field.on 'paste', messages_counter.count
+      messages_counter.$field.on 'paste', (event) ->
+        messages_counter.count messages_counter.$field.val().length + event.originalEvent.clipboardData.getData('Text').length
 
     cut: ->
-      messages_counter.$field.on 'cut', messages_counter.count
+      messages_counter.$field.on 'cut', (event) ->
+        messages_counter.count messages_counter.$field.val().length - event.originalEvent.clipboardData.getData('Text').length
 
     init: ->
-      messages_counter.keydown()
+      messages_counter.keyup()
       messages_counter.paste()
       messages_counter.cut()
       $("#no_of_messages").val(0)
