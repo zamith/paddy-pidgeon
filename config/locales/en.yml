@@ -44,9 +44,9 @@ en:
       edit:
         title: "Edit Event"
       fields:
-        end_date: "End Date"
+        end_date: "End date"
         name: "Name"
-        start_date: "Start Date"
+        start_date: "Start date"
       index:
         title: "Events"
       new:
@@ -70,6 +70,8 @@ en:
       edit:
         title: "Edit Message"
       fields:
+        deliver_date: "Deliver Date"
+        group: "Group"
         text: "Text"
       index:
         title: "Messages"
@@ -109,10 +111,3 @@ en:
       mass_update_error: "There was an error creating your contacts."
       multiple_messages_sent: "A total of %{number_of_messages} messages was delivered."
       one_message_sent: "Your message was sent"
-
-  helpers:
-      label:
-        message:
-          deliver_date: "Deliver Date"
-          group_id: "Receivers Group"
-          text: "Text"

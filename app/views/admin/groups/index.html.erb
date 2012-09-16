@@ -3,12 +3,14 @@
 <table class='list'>
   <thead>
     <th><%= t('admin.groups.fields.name') %></th>
+    <th><%= t('admin.groups.fields.number_of_contacts') %></th>
     <th></th>
   </thead>
   <tbody>
     <% @groups.each do |group| %>
       <tr>
         <td><%= link_to group.name, admin_group_path(group) %></td>
+        <td><%= group.contacts.count %></td>
         <td><i class='icon-pencil'></i><%= link_to t('admin.actions.edit'), edit_admin_group_path(group) %><i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_group_path(group), confirm: t('admin.actions.confirm'), :method => :delete, class: 'danger' %></td>
       </tr>
     <% end %>
