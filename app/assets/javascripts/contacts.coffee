@@ -2,14 +2,14 @@ $ ->
   tokeninput =
     $field: $("#groups")
     loaded: false
-    contact_id: window.location.pathname.match(/\d/)
+    contact_id: window.location.pathname.match(/\d+/)
 
     addGroup: (group) ->
       console.log group
 
     getGroups: ->
       if not tokeninput.loaded
-        $.getJSON "/admin/groups/available?contact=#{tokeninput.contact_id}", (data) ->
+        $.getJSON "/admin/groups/available?contact=#{tokeninput.contact_id[0]}", (data) ->
           tokeninput.inputify data.available_groups, data.existing_groups
           tokeninput.loaded = true
 

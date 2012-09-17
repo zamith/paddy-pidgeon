@@ -2,7 +2,7 @@ $ ->
   tokeninput =
     $field: $("#contacts")
     loaded: false
-    group_id: window.location.pathname.match(/\d/)
+    group_id: window.location.pathname.match(/\d+/)
 
     addContact: (contact) ->
       console.log contact
@@ -20,7 +20,7 @@ $ ->
         disableCache: true,
         noResultsText: "No contacts found.",
         hintText: "Type in a user name.",
-        prePopulate: tokeninput.existing_contacts
+        prePopulate: existing_contacts
 
     init: ->
       tokeninput.getContacts()
