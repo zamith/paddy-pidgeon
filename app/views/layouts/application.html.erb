@@ -24,7 +24,7 @@
 
     <div id="main-content" class="<%= "logo" if !user_signed_in? %>">
       <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+        <%= content_tag :div, msg, :id => "flash-#{name}" if msg.is_a?(String) %>
       <% end %>
 
       <%= yield %>

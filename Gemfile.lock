@@ -1,8 +1,7 @@
-GIT
-  remote: https://zamith@github.com/zamith/citygate.git
-  revision: 524edafef24f7a0630f222edb8f4167d18dc441e
+PATH
+  remote: ../citygate
   specs:
-    citygate (0.0.6)
+    citygate (0.0.7)
       cancan (>= 1.6.7)
       devise (>= 2.0.4)
       devise-encryptable (>= 0.1.1)
