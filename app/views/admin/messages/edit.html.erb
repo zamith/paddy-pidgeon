@@ -4,6 +4,7 @@
   <%= render partial: 'form', locals: { form: form } %>
 
   <fieldset class='actions'>
+    <%= form.button t('admin.actions.edit_and_send'), name: 'edit_and_send' %>
     <%= form.button t('admin.actions.edit') %>
     <%= link_to t('admin.actions.back'), :back %>
   </fieldset>

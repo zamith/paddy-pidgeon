@@ -12,6 +12,7 @@ en:
       create_and_send: "Create and Send"
       delete: "Delete"
       edit: "Edit"
+      edit_and_send: "Edit and Send"
       list_contacts: "List Contacts"
       list_events: "List Events"
       list_groups: "List Groups"

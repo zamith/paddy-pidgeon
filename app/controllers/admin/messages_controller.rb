@@ -36,17 +36,21 @@ class Admin::MessagesController < Admin::ApplicationController
     @message.user = current_user
     @message.save
 
-    @messages = Message.divide_text @message
+    send_message(@message)
+  end
+
+  def send_message(message)
+    @messages = Message.divide_text message
 
     delivered = true
-    @messages.each do |message|
+    @messages.each do |msg|
       # Sending must occur after saving so that the unicode chars can be stripped
-      delivered = false unless message.send_from_phone
+      delivered = false unless msg.send_from_phone
     end
 
     if delivered
-      flash[:notice] = (@messages.size == 1) ? 
-        t("flash.one_message_sent") : 
+      flash[:notice] = (@messages.size == 1) ?
+        t("flash.one_message_sent") :
         t("flash.multiple_messages_sent", number_of_messages: @messages.size)
     else
       flash[:error] = t("flash.error_sending_message")
@@ -57,14 +61,18 @@ class Admin::MessagesController < Admin::ApplicationController
 
   def update
     @message = Message.find(params[:id])
-
-    if @message.update_attributes(params[:message])
-      flash[:notice] = t('flash.message_edited')
+    updated = @message.update_attributes(params[:message])
+    if params[:edit_and_send] and updated
+      send_message(@message)
     else
-      flash[:error] = @message.errors.full_messages.last
-    end
+      if updated
+        flash[:notice] = t('flash.message_edited')
+      else
+        flash[:error] = @message.errors.full_messages.last
+      end
 
-    respond_with(@message, location: admin_message_path(@message))
+      respond_with(@message, location: admin_message_path(@message))
+    end
   end
 
   def edit
