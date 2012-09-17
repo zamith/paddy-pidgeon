@@ -1,27 +1,15 @@
 <h1><%= t('users.show.title') %></h1>
 
 <ul class='details'>
+  <li><span class='label'><%= t('users.fields.email') %></span><span><%= current_user.email %></span></li>
   <li><span class='label'><%= t('users.fields.first_name') %></span><span><%= current_user.first_name %></span></li>
   <li><span class='label'><%= t('users.fields.last_name') %></span><span><%= current_user.last_name %></span></li>
-  <li><span class='label'><%= t('users.fields.email') %></span><span><%= current_user.email %></span></li>
 </ul>
 
-<div id='social-accounts'>
-  <% connected_providers = current_user.authorizations.map(&:provider) %>
-
-  <%= connected_providers %>
-
-  <% @providers.each do |provider| %>
-    <% class_str = "#{provider}-connect " %>
-    <% class_str += (connected_providers.include? provider.to_s.capitalize) ? "connected" : "can-connect" %>
-
-    <div class="<%= class_str %>">
-      <%= link_to "#{provider.to_s.capitalize}", user_omniauth_authorize_path(provider, {user: current_user}) %>
-    </div>
-  <% end %>
-</div>
-
 <div class='actions'>
-  <%= link_to t('navigation.links.edit'), citygate.edit_user_registration_path, class: 'button' %>
+  <%= link_to t('admin.actions.edit'), citygate.edit_user_registration_path, class: 'button' %>
+  <%= link_to t('admin.users.edit.cancel_account.link'), registration_path(current_user),
+              :data => { :confirm => t('admin.users.edit.cancel_account.confirm') }, 
+              :method => :delete, class: 'danger' %>
   <%= link_to t('admin.actions.back'), root_path %>
 </div>

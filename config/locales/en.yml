@@ -30,7 +30,7 @@ en:
       mass_add:
         labels:
           group: "Group"
-          numbers: "Phone Numbers"
+          numbers: "Phone numbers"
         title: "Add Multiple Contacts"
       new:
         title: "New Contact"
@@ -60,12 +60,16 @@ en:
         title: "Edit Group"
       fields:
         name: "Name"
+        number_of_contacts: "Number of contacts"
       index:
         title: "Groups"
       new:
         title: "New Group"
       show:
         title: "Group Details"
+
+    index:
+      title: "Welcome to PaddyPigeon!"
 
     messages:
       edit:
@@ -81,6 +85,12 @@ en:
         title: "New Message"
       show:
         title: "Message Details"
+
+    users:
+      fields:
+        first_name: "First name"
+        last_name: "Last name"
+        email: "Email"
 
   registrations:
     actions:

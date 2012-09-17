@@ -2,10 +2,12 @@
 
 <table class='list'>
   <thead>
-    <th><%= t('admin.contacts.fields.phone_number') %></th>
-    <th><%= t('admin.contacts.fields.name') %></th>
-    <th><%= t('admin.contacts.fields.email') %></th>
-    <th></th>
+    <tr>
+      <th><%= t('admin.contacts.fields.phone_number') %></th>
+      <th><%= t('admin.contacts.fields.name') %></th>
+      <th><%= t('admin.contacts.fields.email') %></th>
+      <th></th>
+    </tr>
   </thead>
   <tbody>
     <% @contacts.each do |contact| %>

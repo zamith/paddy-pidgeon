@@ -1,0 +1,12 @@
+<h1><%= t('users.show.title') %></h1>
+
+<ul class='details'>
+  <li><span class='label'><%= t('users.fields.email') %></span><span><%= @user.email %></span></li>
+  <li><span class='label'><%= t('users.fields.first_name') %></span><span><%= @user.first_name %></span></li>
+  <li><span class='label'><%= t('users.fields.last_name') %></span><span><%= @user.last_name %></span></li>
+</ul>
+
+<div class='actions'>
+  <%= link_to t('admin.actions.edit'), edit_admin_user_path(@user), class: 'button' %>
+  <%= link_to t('admin.actions.back'), root_path %>
+</div>

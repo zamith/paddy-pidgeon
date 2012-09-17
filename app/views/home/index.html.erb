@@ -1,5 +1,6 @@
+<h1><%= t('admin.index.title') %></h1>
+
 <% if !user_signed_in? %>
-  <%= role_changer %>
   <%= citygate_nav_links %>
 <% else %>
   <%= link_to t('admin.actions.list_contacts'), admin_contacts_path, class: 'list-icon contacts' %>

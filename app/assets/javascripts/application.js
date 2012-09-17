@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require citygate
 //= require jquery.tokeninput
-//= require_tree .
+//= require contacts
+//= require groups
+//= require messages

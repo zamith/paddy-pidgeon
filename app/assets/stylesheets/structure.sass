@@ -78,12 +78,15 @@ header
   background-position: center top, center bottom, center center
   background-repeat: no-repeat, no-repeat, repeat-y
   margin-top: 120px
-  min-height: 280px
+  min-height: 220px
   padding: 40px
 
   nav
     background-image: image-url('seal.png')
     background-repeat: no-repeat
+    height: 103px
+    padding-left: 200px
+    padding-top: 50px
 
 
 #main-content.logo
@@ -94,27 +97,48 @@ header
   background-repeat: no-repeat
   display: inline-block
   height: 131px
-  margin: 70px 25px
+  margin: 30px 25px
   overflow: hidden
   text-indent: 100%
   white-space: nowrap
   width: 131px
+  @include opacity(0.7)
+
+
+.list-icon:hover
+  @include opacity(1)
 
 
 .list-icon.contacts
   background-image: image-url('contacts.png')
 
 
+.list-icon.contacts:hover
+  background-image: image-url('contacts_hover.png')
+
+
 .list-icon.events
   background-image: image-url('events.png')
+
+
+.list-icon.events:hover
+  background-image: image-url('events_hover.png')
 
 
 .list-icon.groups
   background-image: image-url('groups.png')
 
 
+.list-icon.groups:hover
+  background-image: image-url('groups_hover.png')
+
+
 .list-icon.messages
   background-image: image-url('messages.png')
+
+
+.list-icon.messages:hover
+  background-image: image-url('messages_hover.png')
 
 
 .list

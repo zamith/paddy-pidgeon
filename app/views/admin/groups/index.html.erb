@@ -2,9 +2,11 @@
 
 <table class='list'>
   <thead>
-    <th><%= t('admin.groups.fields.name') %></th>
-    <th><%= t('admin.groups.fields.number_of_contacts') %></th>
-    <th></th>
+    <tr>
+      <th><%= t('admin.groups.fields.name') %></th>
+      <th><%= t('admin.groups.fields.number_of_contacts') %></th>
+      <th></th>
+    </tr>
   </thead>
   <tbody>
     <% @groups.each do |group| %>
