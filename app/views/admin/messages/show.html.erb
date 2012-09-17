@@ -1,9 +1,9 @@
 <h1><%= t('admin.messages.show.title') %></h1>
 
 <ul class='details'>
-  <li><span class='label'><%= t('admin.messages.fields.text') %></span><span><%= @message.text %></span></li>
+  <li><span class='label'><%= t('admin.messages.fields.text') %></span><span class='message-text'><%= @message.text %></span></li>
   <li><span class='label'><%= t('admin.messages.fields.deliver_date') %></span><span><%= @message.deliver_date.strftime("%d %B %Y") %></span></li>
-  <li><span class='label'><%= t('admin.messages.fields.group') %></span><span><%= @message.group.name %></span></li>
+  <li><span class='label'><%= t('admin.messages.fields.group') %></span><span><%= @message.group.name unless @message.group.nil? %></span></li>
 </ul>
 
 <div class='actions'>
