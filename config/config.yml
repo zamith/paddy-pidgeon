@@ -1,5 +1,5 @@
 message_sender:
-  url: "192.168.84.2"
+  url: "groupbuddies.di.uminho.pt"
   port: "30001"
   username: 'testname'
   password: 'password'

@@ -3,7 +3,7 @@ class Admin::MessagesController < Admin::ApplicationController
   respond_to :html
 
   def index
-    @contact = Message.all
+    @contact = Message.find_all_by_user_id current_user.id
   end
 
   def show
@@ -36,12 +36,12 @@ class Admin::MessagesController < Admin::ApplicationController
     @message.user = current_user
     @message.save
 
-    @messages = Message.divide_text params[:message]
+    @messages = Message.divide_text @message
 
     delivered = true
     @messages.each do |message|
       # Sending must occur after saving so that the unicode chars can be stripped
-      #delivered = false unless message.send_from_phone
+      delivered = false unless message.send_from_phone
     end
 
     if delivered

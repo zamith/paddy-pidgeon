@@ -6,6 +6,9 @@ class Admin::ContactsController < Admin::ApplicationController
   def available
     # Show only the contacts with a name
     @contacts = Contact.find_all_by_user_id(current_user.id, select: [:id, :name]).delete_if{|c|c.name.blank?}
+    if params[:group] != "null"
+      @existing_contacts = Contact.select([:id, :name]).where("id in(?)", Group.find(params[:group]).contact_ids).delete_if{|c|c.name.blank?}
+    end
 
     respond_with @contacts
   end

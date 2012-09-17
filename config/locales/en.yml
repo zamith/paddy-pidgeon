@@ -46,6 +46,7 @@ en:
       fields:
         end_date: "End date"
         name: "Name"
+        no_date: ""
         start_date: "Start date"
       index:
         title: "Events"
@@ -72,6 +73,7 @@ en:
       fields:
         deliver_date: "Deliver Date"
         group: "Group"
+        no_date: ""
         text: "Text"
       index:
         title: "Messages"

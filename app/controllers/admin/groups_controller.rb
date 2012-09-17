@@ -4,7 +4,7 @@ class Admin::GroupsController < Admin::ApplicationController
   respond_to :json, only:   [:available]
 
   def index
-    @group = Group.all
+    @group = Group.find_all_by_user_id current_user.id
   end
 
   def show
@@ -53,6 +53,11 @@ class Admin::GroupsController < Admin::ApplicationController
 
   def available
     @groups = Group.find_all_by_user_id(current_user.id, select: [:id, :name])
-    respond_with @groups
+    @existing_groups = []
+    if params[:contact] != "null"
+      @existing_groups = Group.select([:id, :name]).where("id in(?)", Contact.find(params[:contact]).group_ids)
+    end
+
+    respond_with({available_groups: @groups, existing_groups: @existing_groups}.to_json)
   end
 end

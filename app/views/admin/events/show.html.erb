@@ -2,8 +2,14 @@
 
 <ul class='details'>
   <li><span class='label'><%= t('admin.events.fields.name') %></span><span><%= @event.name %></span></li>
-  <li><span class='label'><%= t('admin.events.fields.start_date') %></span><span><%= @event.start_date %></span></li>
-  <li><span class='label'><%= t('admin.events.fields.end_date') %></span><span><%= @event.end_date %></span></li>
+  <li>
+    <span class='label'><%= t('admin.events.fields.start_date') %></span>
+    <span><%= (@event.start_date) ? @event.start_date.strftime("%d %B %Y") : t('admin.events.fields.no_date') %></span>
+  </li>
+  <li>
+    <span class='label'><%= t('admin.events.fields.end_date') %></span>
+    <span><%= (@event.end_date) ? @event.end_date.strftime("%d %B %Y") : t('admin.events.fields.no_date') %></span>
+  </li>
 </ul>
 
 <div class="actions">
