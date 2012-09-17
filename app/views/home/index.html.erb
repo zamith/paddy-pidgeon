@@ -1,10 +1,8 @@
-<% if !user_signed_in? %>
-  <h1><%= t('') %></h1>
+<h1><%= t('admin.index.title') %></h1>
 
+<% if !user_signed_in? %>
   <%= citygate_nav_links %>
 <% else %>
-  <h1><%= t('admin.index.title') %></h1>
-
   <%= link_to t('admin.actions.list_contacts'), admin_contacts_path, class: 'list-icon contacts' %>
   <%= link_to t('admin.actions.list_events'), admin_events_path, class: 'list-icon events' %>
   <%= link_to t('admin.actions.list_groups'), admin_groups_path, class: 'list-icon groups' %>

@@ -30,7 +30,7 @@ en:
       mass_add:
         labels:
           group: "Group"
-          numbers: "Phone Numbers"
+          numbers: "Phone numbers"
         title: "Add Multiple Contacts"
       new:
         title: "New Contact"
@@ -60,6 +60,7 @@ en:
         title: "Edit Group"
       fields:
         name: "Name"
+        number_of_contacts: "Number of contacts"
       index:
         title: "Groups"
       new:
