@@ -8,7 +8,7 @@
     <th></th>
   </thead>
   <tbody>
-    <% @event.each do |event| %>
+    <% @events.each do |event| %>
       <tr>
         <td><%= link_to event.name, admin_event_path(event) %></td>
         <td><%= (event.start_date) ? event.start_date.strftime("%d %B %Y") : t('admin.events.fields.no_date') %></td>
@@ -18,6 +18,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @events %>
 
 <div class="actions">
   <%= link_to t('admin.events.new.title'), new_admin_event_path, class: 'button' %>

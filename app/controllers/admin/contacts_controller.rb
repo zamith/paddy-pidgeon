@@ -10,7 +10,7 @@ class Admin::ContactsController < Admin::ApplicationController
       @existing_contacts = Contact.select([:id, :name]).where("id in(?)", Group.find(params[:group]).contact_ids).delete_if{|c|c.name.blank?}
     end
 
-    respond_with @contacts
+    respond_with({available_contacts: @contacts, existing_contacts: @existing_contacts}.to_json)
   end
 
   def mass_add
@@ -38,7 +38,7 @@ class Admin::ContactsController < Admin::ApplicationController
   end
 
   def index
-    @contact = Contact.find_all_by_user_id current_user.id
+    @contacts = Contact.paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
   end
 
   def show

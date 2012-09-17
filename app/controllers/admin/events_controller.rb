@@ -3,7 +3,7 @@ class Admin::EventsController < Admin::ApplicationController
   respond_to :html
 
   def index
-    @event = Event.find_all_by_user_id current_user.id
+    @events = Event.paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
   end
 
   def show

@@ -8,8 +8,8 @@
   <%= form.label :text %>
   <%= form.text_area :text, rows: 10, required: 'required' %>
 
-  <%= form.label :deliver_date %>
-  <%= form.date_select :deliver_date, 
+  <%#= form.label :deliver_date %>
+  <%#= form.date_select :deliver_date, 
         start_year: Time.now.year, 
         end_year: Time.now.year + 1, 
         include_blank: true,

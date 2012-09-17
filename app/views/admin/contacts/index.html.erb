@@ -8,7 +8,7 @@
     <th></th>
   </thead>
   <tbody>
-    <% @contact.each do |contact| %>
+    <% @contacts.each do |contact| %>
       <tr>
         <td><%= link_to contact.phone_number, admin_contact_path(contact) %></td>
         <td><%= contact.name %></td>
@@ -18,6 +18,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @contacts %>
 
 <div class="actions">
   <%= link_to t('admin.contacts.new.title'), new_admin_contact_path, class: 'button' %>

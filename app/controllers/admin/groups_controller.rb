@@ -4,7 +4,7 @@ class Admin::GroupsController < Admin::ApplicationController
   respond_to :json, only:   [:available]
 
   def index
-    @group = Group.find_all_by_user_id current_user.id
+    @groups = Group.paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
   end
 
   def show
