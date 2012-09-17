@@ -1,4 +1,8 @@
-<%= devise_error_messages! %>
+<div id="flash-error">
+  <% resource.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+</div>
 
 <h1><%= t('admin.users.edit.title') %></h1>
 
