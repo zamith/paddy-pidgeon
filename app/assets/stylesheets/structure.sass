@@ -86,6 +86,33 @@ header
   margin-top: 45px
 
 
+.list-icon
+  background-repeat: no-repeat
+  display: inline-block
+  height: 131px
+  margin: 70px 25px
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+  width: 131px
+
+
+.list-icon.contacts
+  background-image: image-url('contacts.png')
+
+
+.list-icon.events
+  background-image: image-url('events.png')
+
+
+.list-icon.groups
+  background-image: image-url('groups.png')
+
+
+.list-icon.messages
+  background-image: image-url('messages.png')
+
+
 .list
   font-size: 0.9em
   width: 742px
@@ -139,7 +166,7 @@ form
     width: 200px
 
   textarea
-    font-size: 0.8em
+    font-size: 1em
     max-width: 535px
     width: 535px
 
@@ -149,6 +176,11 @@ form
     float: right
     text-align: right
     width: 50px
+
+
+.message-text
+  margin-left: 200px
+  @include inline-block(top)
 
 
 .actions
@@ -198,20 +230,22 @@ form
     @include inline-block(none)
 
 
-#flash_alert, #flash_error, #flash_notice
+#flash-alert, #flash-error, #flash-notice
   color: #323232
   font-size: 0.9em
   margin-bottom: 20px
   padding: 10px
 
 
-#flash_alert
+#flash-alert
   background-color: rgba(217, 186, 71, 0.6)
 
-#flash_error
+
+#flash-error
   background-color: rgba(217, 88, 71, 0.6)
 
-#flash_notice
+
+#flash-notice
   background-color: rgba(138, 197, 65, 0.6)
 
 

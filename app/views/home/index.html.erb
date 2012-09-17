@@ -2,8 +2,8 @@
   <%= role_changer %>
   <%= citygate_nav_links %>
 <% else %>
-  <%= link_to t('admin.actions.list_contacts'), admin_contacts_path %>
-  <%= link_to t('admin.actions.list_events'), admin_events_path %>
-  <%= link_to t('admin.actions.list_groups'), admin_groups_path %>
-  <%= link_to t('admin.actions.list_messages'), admin_messages_path %>
+  <%= link_to t('admin.actions.list_contacts'), admin_contacts_path, class: 'list-icon contacts' %>
+  <%= link_to t('admin.actions.list_events'), admin_events_path, class: 'list-icon events' %>
+  <%= link_to t('admin.actions.list_groups'), admin_groups_path, class: 'list-icon groups' %>
+  <%= link_to t('admin.actions.list_messages'), admin_messages_path, class: 'list-icon messages' %>
 <% end %>
