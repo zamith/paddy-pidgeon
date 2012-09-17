@@ -8,5 +8,8 @@
 
 <div class='actions'>
   <%= link_to t('admin.actions.edit'), citygate.edit_user_registration_path, class: 'button' %>
+  <%= link_to t('admin.users.edit.cancel_account.link'), registration_path(current_user),
+              :data => { :confirm => t('admin.users.edit.cancel_account.confirm') }, 
+              :method => :delete, class: 'danger' %>
   <%= link_to t('admin.actions.back'), root_path %>
 </div>
