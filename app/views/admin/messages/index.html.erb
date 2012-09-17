@@ -2,10 +2,12 @@
 
 <table class='list'>
   <thead>
-    <th><%= t('admin.messages.fields.name') %></th>
-    <th><%= t('admin.messages.fields.deliver_date') %></th>
-    <th><%= t('admin.messages.fields.group') %></th>
-    <th></th>
+    <tr>
+      <th><%= t('admin.messages.fields.name') %></th>
+      <th><%= t('admin.messages.fields.deliver_date') %></th>
+      <th><%= t('admin.messages.fields.group') %></th>
+      <th></th>
+    </tr>
   </thead>
   <tbody>
     <% @messages.each do |message| %>

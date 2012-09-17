@@ -1,7 +1,7 @@
 PATH
   remote: ../citygate
   specs:
-    citygate (0.0.7)
+    citygate (0.0.6)
       cancan (>= 1.6.7)
       devise (>= 2.0.4)
       devise-encryptable (>= 0.1.1)

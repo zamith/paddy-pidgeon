@@ -67,6 +67,9 @@ en:
       show:
         title: "Group Details"
 
+    index:
+      title: "Welcome to PaddyPigeon!"
+
     messages:
       edit:
         title: "Edit Message"
@@ -81,6 +84,12 @@ en:
         title: "New Message"
       show:
         title: "Message Details"
+
+    users:
+      fields:
+        first_name: "First name"
+        last_name: "Last name"
+        email: "Email"
 
   registrations:
     actions:

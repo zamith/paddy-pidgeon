@@ -1,0 +1,27 @@
+<% unless @user.errors.full_messages.empty? %>
+  <div id="flash-error">
+    <% @user.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<h1><%= t('admin.users.edit.title') %></h1>
+
+<%= form_for @user, :url => admin_user_path(@user), :method => :put, :html => { :id => dom_id(@user, :edit) } do |f| %>
+  <fieldset>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </fieldset>
+
+  <fieldset class='actions'>
+    <%= f.button t('admin.actions.edit') %>
+    <%= link_to t('admin.actions.back'), :back %>
+  </fieldset>
+<% end %>

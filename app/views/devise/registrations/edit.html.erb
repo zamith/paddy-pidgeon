@@ -1,8 +1,10 @@
-<div id="flash-error">
-  <% resource.errors.full_messages.each do |msg| %>
-    <p><%= msg %></p>
-  <% end %>
-</div>
+<% unless resource.errors.full_messages.empty? %>
+  <div id="flash-error">
+    <% resource.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
 
 <h1><%= t('admin.users.edit.title') %></h1>
 
@@ -28,7 +30,7 @@
   </fieldset>
 
   <fieldset class='actions'>
-    <%= f.button t('admin.users.edit.update_link') %>
+    <%= f.button t('admin.actions.edit') %>
     <%= link_to t('admin.users.edit.cancel_account.link'), registration_path(resource_name),
                 :data => { :confirm => t('admin.users.edit.cancel_account.confirm') }, 
                 :method => :delete, class: 'danger' %>

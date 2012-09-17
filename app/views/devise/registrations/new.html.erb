@@ -1,8 +1,10 @@
-<div id="flash-error">
-  <% resource.errors.full_messages.each do |msg| %>
-    <p><%= msg %></p>
-  <% end %>
-</div>
+<% unless resource.errors.full_messages.empty? %>
+  <div id="flash-error">
+    <% resource.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
 
 <h1><%= t('registrations.sign_up.title') %></h1>
 
@@ -20,7 +22,7 @@
   </fieldset>
 
   <fieldset class='actions'>
-    <%= f.button t('admin.users.new.create_link') %>
+    <%= f.button t('admin.actions.create') %>
     <%= link_to t('admin.actions.back'), root_path %>
   </fieldset>
 <% end %>
