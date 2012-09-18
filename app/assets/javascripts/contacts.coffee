@@ -9,7 +9,7 @@ $ ->
 
     getGroups: ->
       if not tokeninput.loaded
-        $.getJSON "/admin/groups/available?contact=#{tokeninput.contact_id[0]}", (data) ->
+        $.getJSON "/admin/groups/available?contact=#{tokeninput.contact_id}", (data) ->
           tokeninput.inputify data.available_groups, data.existing_groups
           tokeninput.loaded = true
 
