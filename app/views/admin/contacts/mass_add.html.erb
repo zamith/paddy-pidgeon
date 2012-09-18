@@ -1,12 +1,13 @@
 <h1><%= t('admin.contacts.mass_add.title') %></h1>
 
 <%= form_tag mass_add_admin_contacts_path do %>
+  <fieldset>
+    <%= label_tag :numbers, t("admin.contacts.mass_add.labels.numbers") %>
+    <%= text_area_tag :numbers, nil, cols: 40, rows: 10 %>
 
-  <%= label_tag :numbers, t("admin.contacts.mass_add.labels.numbers") %>
-  <%= text_area_tag :numbers %>
-
-  <%= label_tag :group_id, t("admin.contacts.mass_add.labels.group") %>
-  <%= select_tag :group_id, options_from_collection_for_select(Group.all, 'id', 'name') %>
+    <%= label_tag :group_id, t("admin.contacts.mass_add.labels.group") %>
+    <%= select_tag :group_id, options_from_collection_for_select(Group.all, 'id', 'name') %>
+  </fieldset>
 
   <fieldset class='actions'>
     <%= button_tag t('admin.actions.create') %>

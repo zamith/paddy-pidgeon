@@ -1,5 +1,11 @@
 <h1><%= t('admin.contacts.index.title') %></h1>
 
+<div class="actions">
+  <%= link_to t('admin.contacts.new.title'), new_admin_contact_path, class: 'button' %>
+  <%= link_to t('admin.actions.mass_add_contacts'), mass_add_admin_contacts_path, class: 'button' %>
+  <%= link_to t('admin.actions.back'), root_path %>
+</div>
+
 <table class='list'>
   <thead>
     <tr>
@@ -22,8 +28,3 @@
 </table>
 
 <%= will_paginate @contacts %>
-
-<div class="actions">
-  <%= link_to t('admin.contacts.new.title'), new_admin_contact_path, class: 'button' %>
-  <%= link_to t('admin.actions.back'), root_path %>
-</div>

@@ -17,6 +17,7 @@ en:
       list_events: "List Events"
       list_groups: "List Groups"
       list_messages: "List Messages"
+      mass_add_contacts: "Add Multiple Contacts"
       send: "Send"
 
     contacts:
