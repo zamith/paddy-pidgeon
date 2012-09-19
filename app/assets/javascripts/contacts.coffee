@@ -1,6 +1,6 @@
 $ ->
   tokeninput =
-    $field: $("#groups")
+    $field: $("#group_ids")
     loaded: false
     contact_id: window.location.pathname.match(/\d+/)
 
