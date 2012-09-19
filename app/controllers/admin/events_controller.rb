@@ -4,9 +4,9 @@ class Admin::EventsController < Admin::ApplicationController
 
   def index
     if can?(:manage, Citygate::User)
-      @events = Event.paginate(page: params[:page], per_page: 10)
+      @events = Event.order("start_date DESC, end_date ASC").paginate(page: params[:page], per_page: 10)
     else
-      @events = Event.paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
+      @events = Event.order("start_date DESC, end_date ASC").paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
     end
   end
 

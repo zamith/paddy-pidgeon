@@ -12,6 +12,7 @@
  *= require structure
  *= require forms
  *= require flash
+ *= require tooltips
  *= require pagination
  *= require token-input-facebook
  */
