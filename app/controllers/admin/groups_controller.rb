@@ -34,7 +34,7 @@ class Admin::GroupsController < Admin::ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    contact_ids = params[:contacts].split(",") + @group.contact_ids
+    contact_ids = params[:contact_ids].split(",") + @group.contact_ids
 
     if @group.update_attributes(params[:group].merge contact_ids: contact_ids)
       flash[:notice] = t('flash.group_edited', name: @group.name)

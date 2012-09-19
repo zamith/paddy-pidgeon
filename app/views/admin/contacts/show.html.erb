@@ -8,7 +8,7 @@
   <% unless @contact.groups.empty? %>
     <li>
       <span class='label'><%= t('admin.contacts.fields.groups') %></span>
-      <ul>
+      <ul class='groups'>
         <% @contact.groups.each do |group| %>
           <li><span><%= group.name %></span></li>
         <% end %>
