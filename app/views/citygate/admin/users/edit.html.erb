@@ -18,6 +18,11 @@
 
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
+
+    <%= f.label :role_id %>
+    <%= f.select :role_id, 
+        options_from_collection_for_select(Citygate::Role.all, "id", "name", @user.role_id), 
+        include_blank: true %>
   </fieldset>
 
   <fieldset class='actions'>

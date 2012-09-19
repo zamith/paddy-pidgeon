@@ -93,9 +93,10 @@ en:
 
     users:
       fields:
+        email: "Email"
         first_name: "First name"
         last_name: "Last name"
-        email: "Email"
+        role: "Role"
 
   registrations:
     actions:
