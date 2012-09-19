@@ -82,6 +82,7 @@ en:
         deliver_date: "Deliver Date"
         group: "Group"
         no_date: ""
+        no_group: "None"
         text: "Text"
       index:
         title: "Messages"
