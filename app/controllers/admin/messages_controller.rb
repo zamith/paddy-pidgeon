@@ -16,6 +16,7 @@ class Admin::MessagesController < Admin::ApplicationController
 
   def new
     @message = Message.new
+    @groups = visible_groups
   end
 
   def create
@@ -81,6 +82,7 @@ class Admin::MessagesController < Admin::ApplicationController
 
   def edit
     @message = Message.find(params[:id])
+    @groups = visible_groups
   end
 
   def destroy
@@ -88,5 +90,13 @@ class Admin::MessagesController < Admin::ApplicationController
     @message.destroy
 
     redirect_to admin_messages_path
+  end
+
+  def visible_groups
+    if can?(:manage, Citygate::User)
+      Group.select([:id, :name]).all
+    else
+      Group.select([:id, :name]).find_all_by_user_id current_user.id
+    end
   end
 end
