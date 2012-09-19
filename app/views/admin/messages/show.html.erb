@@ -3,10 +3,10 @@
 <ul class='details'>
   <li><span class='label'><%= t('admin.messages.fields.text') %></span><p><%= @message.text %></p></li>
   <li>
-  <% if @message.deliver_date %>
-    <span class='label'><%= t('admin.messages.fields.deliver_date') %></span>
-    <span><%= @message.deliver_date.strftime("%d %B %Y") %></span>
-  <% end %>
+    <% if @message.deliver_date %>
+      <span class='label'><%= t('admin.messages.fields.deliver_date') %></span>
+      <span><%= @message.deliver_date.strftime("%d %B %Y") %></span>
+    <% end %>
   </li>
   <li>
     <span class='label'><%= t('admin.messages.fields.group') %></span>
