@@ -1,0 +1,29 @@
+@import "compass/css3"
+
+
+.pagination
+  font-size: 1em
+  margin-top: 20px
+  @include inline-block(none)
+
+  a, span, em
+    display: block
+    float: left
+    margin-right: 1px
+    padding: 5px 10px
+
+  .disabled
+    display: none
+
+  .current
+    background-color: #7492A3
+    color: #FFF
+
+  a
+    background-color: rgba(117, 147, 163, 0.3)
+    color: #323232
+    text-decoration: none
+
+  a:hover, a:focus
+    background-color: rgba(117, 147, 163, 0.5)
+    color: #FFF

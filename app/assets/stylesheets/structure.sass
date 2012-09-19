@@ -2,14 +2,12 @@
 @import "compass/css3"
 
 
-@font-face
-  font-family: Oxygen
-  src: 'fonts/Oxygen-Regular.ttf'
+@include font-face('Oxygen', font-files('Oxygen-Regular.ttf'))
 
 
 body
   background-image: image-url('bg.png')
-  font-family: Oxygen, Arial, Sans-Serif
+  font-family: Oxygen, sans-serif
 
 
 a
@@ -82,18 +80,18 @@ header
   padding: 40px
 
   nav
-    background-image: image-url('seal.png')
+    background-image: image-url('login.png')
     background-repeat: no-repeat
-    height: 103px
-    padding-left: 200px
-    padding-top: 50px
+    height: 95px
+    padding-left: 180px
+    padding-top: 40px
 
 
 #main-content.logo
   margin-top: 45px
 
 
-.list-icon
+.stamp-icon
   background-repeat: no-repeat
   display: inline-block
   height: 131px
@@ -105,39 +103,39 @@ header
   @include opacity(0.7)
 
 
-.list-icon:hover
+.stamp-icon:hover
   @include opacity(1)
 
 
-.list-icon.contacts
+.stamp-icon.contacts
   background-image: image-url('contacts.png')
 
 
-.list-icon.contacts:hover
+.stamp-icon.contacts:hover
   background-image: image-url('contacts_hover.png')
 
 
-.list-icon.events
+.stamp-icon.events
   background-image: image-url('events.png')
 
 
-.list-icon.events:hover
+.stamp-icon.events:hover
   background-image: image-url('events_hover.png')
 
 
-.list-icon.groups
+.stamp-icon.groups
   background-image: image-url('groups.png')
 
 
-.list-icon.groups:hover
+.stamp-icon.groups:hover
   background-image: image-url('groups_hover.png')
 
 
-.list-icon.messages
+.stamp-icon.messages
   background-image: image-url('messages.png')
 
 
-.list-icon.messages:hover
+.stamp-icon.messages:hover
   background-image: image-url('messages_hover.png')
 
 
@@ -169,51 +167,8 @@ header
     padding-right: 5px
 
 
-form
-
-  input[type='checkbox']
-    margin-left: 0
-    margin-top: 5px
-
-  input, label, select, textarea
-    float: left
-    margin-bottom: 5px
-
-  input
-    border: 1px solid rgba(0, 0, 0, 0.4)
-    clear: right
-    font-size: 0.8em
-    height: 20px
-    padding: 5px
-    width: 250px
-    @include border-radius(5px)
-
-  label
-    clear: both
-    padding-top: 8px
-    width: 200px
-
-  textarea
-    font-size: 1em
-    max-width: 535px
-    width: 535px
-
-  .counter
-    background-color: transparent
-    border: none
-    float: right
-    text-align: right
-    width: 50px
-
-
-.message-text
-  margin-left: 200px
-  @include inline-block(top)
-
-
 .actions
-  margin-top: 15px
-  margin-bottom: 15px
+  margin: 20px 0
 
   a
     cursor: pointer
@@ -251,31 +206,17 @@ form
 
 
 .details
+
   li
     margin-bottom: 25px
 
+  p
+    width: 542px
+    @include inline-block(top)
+
   .label
     width: 200px
-    @include inline-block(none)
-
-
-#flash-alert, #flash-error, #flash-notice
-  color: #323232
-  font-size: 0.9em
-  margin-bottom: 20px
-  padding: 10px
-
-
-#flash-alert
-  background-color: rgba(217, 186, 71, 0.6)
-
-
-#flash-error
-  background-color: rgba(217, 88, 71, 0.6)
-
-
-#flash-notice
-  background-color: rgba(138, 197, 65, 0.6)
+    @include inline-block(top)
 
 
 footer
