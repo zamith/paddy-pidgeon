@@ -74,8 +74,9 @@ class Admin::ContactsController < Admin::ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
+    group_ids = params[:groups].split(",") + @contact.group_ids
 
-    if @contact.update_attributes(params[:contact])
+    if @contact.update_attributes(params[:contact].merge group_ids: group_ids)
       flash[:notice] = t('flash.contact_edited', number: @contact.phone_number)
     else
       flash[:error] = @contact.errors.full_messages.last
