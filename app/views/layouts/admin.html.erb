@@ -9,6 +9,7 @@
   <script src="http://cdn.jquerytools.org/1.2.7/tiny/jquery.tools.min.js"></script>
 
   <%= csrf_meta_tags %>
+  <%= yield :head %>
 </head>
 <body>
   <% if user_signed_in? %>
