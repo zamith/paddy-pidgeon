@@ -10,6 +10,7 @@ capybara-*.html
 /tmp/*
 /db/*.sqlite3
 /public/system/*
+/public/assets/*
 /coverage/
 /spec/tmp/*
 **.orig
@@ -17,3 +18,4 @@ rerun.txt
 pickle-email-*.html
 db/schema.rb
 config/config.yml
+
