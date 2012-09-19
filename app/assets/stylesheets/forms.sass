@@ -1,0 +1,38 @@
+@import "compass/css3"
+
+
+form
+
+  input[type='checkbox']
+    margin-left: 0
+    margin-top: 5px
+
+  input, label, select, textarea
+    float: left
+    margin-bottom: 5px
+
+  input
+    border: 1px solid rgba(0, 0, 0, 0.4)
+    clear: right
+    font-size: 0.9em
+    height: 20px
+    padding: 5px
+    width: 250px
+    @include border-radius(5px)
+
+  label
+    clear: both
+    padding-top: 8px
+    width: 200px
+
+  textarea
+    font-size: 0.9em
+    max-width: 535px
+    width: 535px
+
+  .counter
+    background-color: transparent
+    border: none
+    float: right
+    text-align: right
+    width: 50px

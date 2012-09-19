@@ -10,5 +10,8 @@
  *
  *= require font-awesome
  *= require structure
+ *= require forms
+ *= require flash
+ *= require pagination
  *= require token-input-facebook
  */
