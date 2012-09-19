@@ -1,5 +1,5 @@
 class Contact < ActiveRecord::Base
-  attr_accessible :email, :name, :phone_number
+  attr_accessible :email, :name, :phone_number, :group_ids
   has_and_belongs_to_many :groups
   belongs_to :user, class_name: "Citygate::User"
 
