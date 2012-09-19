@@ -3,8 +3,8 @@
 <% if !user_signed_in? %>
   <%= citygate_nav_links %>
 <% else %>
-  <%= link_to t('admin.actions.list_contacts'), admin_contacts_path, class: 'list-icon contacts' %>
-  <%= link_to t('admin.actions.list_events'), admin_events_path, class: 'list-icon events' %>
-  <%= link_to t('admin.actions.list_groups'), admin_groups_path, class: 'list-icon groups' %>
-  <%= link_to t('admin.actions.list_messages'), admin_messages_path, class: 'list-icon messages' %>
+  <%= link_to t('admin.actions.list_contacts'), admin_contacts_path, class: 'stamp-icon contacts' %>
+  <%= link_to t('admin.actions.list_events'), admin_events_path, class: 'stamp-icon events' %>
+  <%= link_to t('admin.actions.list_groups'), admin_groups_path, class: 'stamp-icon groups' %>
+  <%= link_to t('admin.actions.list_messages'), admin_messages_path, class: 'stamp-icon messages' %>
 <% end %>
