@@ -25,4 +25,15 @@ $ ->
     init: ->
       tokeninput.getContacts()
 
+  hints_tooltip =
+    $field: $("#hint")
+
+    init: ->
+      hints_tooltip.$field.tooltip
+        effect: "fade",
+        opacity: 0.7,
+        position: "center right",
+        offset: [-2, 10]
+
   tokeninput.init() if window.location.pathname.indexOf("groups") != -1
+  hints_tooltip.init()

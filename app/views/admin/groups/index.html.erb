@@ -1,5 +1,10 @@
 <h1><%= t('admin.groups.index.title') %></h1>
 
+<div class="actions">
+  <%= link_to t('admin.groups.new.title'), new_admin_group_path, class: 'button' %>
+  <%= link_to t('admin.actions.back'), root_path %>
+</div>
+
 <table class='list'>
   <thead>
     <tr>
@@ -20,8 +25,3 @@
 </table>
 
 <%= will_paginate @groups %>
-
-<div class="actions">
-  <%= link_to t('admin.groups.new.title'), new_admin_group_path, class: 'button' %>
-  <%= link_to t('admin.actions.back'), root_path %>
-</div>

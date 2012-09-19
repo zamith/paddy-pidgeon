@@ -17,6 +17,7 @@ en:
       list_events: "List Events"
       list_groups: "List Groups"
       list_messages: "List Messages"
+      mass_add_contacts: "Add Multiple Contacts"
       send: "Send"
 
     contacts:
@@ -68,6 +69,8 @@ en:
         title: "New Group"
       show:
         title: "Group Details"
+      hints:
+        contacts: "Only the contacts with a name are available"
 
     index:
       title: "Welcome to PaddyPigeon!"

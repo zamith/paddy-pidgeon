@@ -3,7 +3,11 @@ class Admin::MessagesController < Admin::ApplicationController
   respond_to :html
 
   def index
-    @messages = Message.paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
+    if can?(:manage, Citygate::User)
+      @messages = Message.paginate(page: params[:page], per_page: 10)
+    else
+      @messages = Message.paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
+    end
   end
 
   def show

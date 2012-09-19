@@ -68,5 +68,11 @@ module PaddyPidgeon
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    Citygate::Engine.configure do |config|
+      config.will_paginate_options = {per_page: 10}
+      #config.mount_path = "/play"
+      #config.no_of_users = 1
+    end
   end
 end

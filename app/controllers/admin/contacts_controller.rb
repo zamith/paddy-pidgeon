@@ -5,7 +5,11 @@ class Admin::ContactsController < Admin::ApplicationController
 
   def available
     # Show only the contacts with a name
-    @contacts = Contact.find_all_by_user_id(current_user.id, select: [:id, :name]).delete_if{|c|c.name.blank?}
+    if can?(:manage, Citygate::User)
+      @contacts = Contact.select([:id, :name]).all.delete_if{|c|c.name.blank?}
+    else
+      @contacts = Contact.find_all_by_user_id(current_user.id, select: [:id, :name]).delete_if{|c|c.name.blank?}
+    end
     if params[:group] != "null"
       @existing_contacts = Contact.select([:id, :name]).where("id in(?)", Group.find(params[:group]).contact_ids).delete_if{|c|c.name.blank?}
     end
@@ -38,7 +42,11 @@ class Admin::ContactsController < Admin::ApplicationController
   end
 
   def index
-    @contacts = Contact.paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
+    if can?(:manage, Citygate::User)
+      @contacts = Contact.paginate(page: params[:page], per_page: 10)
+    else
+      @contacts = Contact.paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
+    end
   end
 
   def show

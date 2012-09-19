@@ -4,7 +4,11 @@ class Admin::GroupsController < Admin::ApplicationController
   respond_to :json, only:   [:available]
 
   def index
-    @groups = Group.paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
+    if can?(:manage, Citygate::User)
+      @groups = Group.paginate(page: params[:page], per_page: 10)
+    else
+      @groups = Group.paginate(page: params[:page], per_page: 10).find_all_by_user_id current_user.id
+    end
   end
 
   def show
@@ -52,7 +56,11 @@ class Admin::GroupsController < Admin::ApplicationController
   end
 
   def available
-    @groups = Group.find_all_by_user_id(current_user.id, select: [:id, :name])
+    if can?(:manage, Citygate::User)
+      @groups = Group.select([:id, :name]).all
+    else
+      @groups = Group.find_all_by_user_id(current_user.id, select: [:id, :name])
+    end
     @existing_groups = []
     if params[:contact] != "null"
       @existing_groups = Group.select([:id, :name]).where("id in(?)", Contact.find(params[:contact]).group_ids)
