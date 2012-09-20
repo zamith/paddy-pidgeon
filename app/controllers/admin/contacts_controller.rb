@@ -23,6 +23,7 @@ class Admin::ContactsController < Admin::ApplicationController
 
   def mass_add
     @groups = Group.find_all_by_user_id current_user.id
+    add_breadcrumb I18n.t('admin.breadcrumbs.contacts.mass_add'), mass_add_admin_contacts_path
   end
 
   def mass_update

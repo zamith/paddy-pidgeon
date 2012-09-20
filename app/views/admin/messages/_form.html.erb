@@ -17,7 +17,7 @@
         order: [:day, :month, :year] %>
 
   <%= form.label :group %>
-  <%= form.select :group_id, 
+  <%= form.select :group_id,
       options_from_collection_for_select(@groups, 'id', 'name'), 
       prompt: t('admin.messages.fields.no_group') %>
 </fieldset>
