@@ -3,6 +3,9 @@ class Admin::GroupsController < Admin::ApplicationController
   respond_to :html, except: [:available]
   respond_to :json, only:   [:available]
 
+  add_breadcrumb I18n.t('admin.breadcrumbs.home'), :root_path
+  add_breadcrumb I18n.t('admin.breadcrumbs.groups.index'), :admin_groups_path
+
   def index
     if can?(:manage, Citygate::User)
       @groups = Group.paginate(page: params[:page], per_page: 10)
@@ -13,10 +16,14 @@ class Admin::GroupsController < Admin::ApplicationController
 
   def show
     @group = Group.find(params[:id])
+
+    add_breadcrumb I18n.t('admin.breadcrumbs.groups.show'), admin_group_path(@group)
   end
 
   def new
     @group = Group.new
+
+    add_breadcrumb I18n.t('admin.breadcrumbs.groups.new'), new_admin_group_path
   end
 
   def create
@@ -24,7 +31,7 @@ class Admin::GroupsController < Admin::ApplicationController
     @group.user = current_user
 
     if @group.save
-      flash[:notice] = t('flash.group_created', name: @group.name)
+      flash[:notice] = t('admin.flash.group_created', name: @group.name)
     else
       flash[:error] = @group.errors.full_messages.last
     end
@@ -37,7 +44,7 @@ class Admin::GroupsController < Admin::ApplicationController
     contact_ids = params[:contact_ids].split(",") + @group.contact_ids
 
     if @group.update_attributes(params[:group].merge contact_ids: contact_ids)
-      flash[:notice] = t('flash.group_edited', name: @group.name)
+      flash[:notice] = t('admin.flash.group_edited', name: @group.name)
     else
       flash[:error] = @group.errors.full_messages.last
     end
@@ -47,6 +54,8 @@ class Admin::GroupsController < Admin::ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+
+    add_breadcrumb I18n.t('admin.breadcrumbs.groups.edit'), edit_admin_group_path(@group)
   end
 
   def destroy

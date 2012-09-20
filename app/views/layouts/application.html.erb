@@ -22,9 +22,13 @@
   <% end %>
 
   <div class="wrapper">
-    <% if !user_signed_in? %>
+    <% unless user_signed_in? %>
       <a href="/" id="logo-large">PaddyPigeon</a>
     <% end %>
+
+    <div id="breadcrumbs">
+      <%= render_breadcrumbs :separator => ' > ' %>
+    </div>
 
     <div id="main-content" class="<%= 'logo' if !user_signed_in? %>">
       <% flash.each do |name, msg| %>

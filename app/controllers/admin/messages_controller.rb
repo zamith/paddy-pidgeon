@@ -2,6 +2,9 @@ class Admin::MessagesController < Admin::ApplicationController
   load_and_authorize_resource :class => 'Message'
   respond_to :html
 
+  add_breadcrumb I18n.t('admin.breadcrumbs.home'), :root_path
+  add_breadcrumb I18n.t('admin.breadcrumbs.messages.index'), :admin_messages_path
+
   def index
     if can?(:manage, Citygate::User)
       @messages = Message.paginate(page: params[:page], per_page: 10)
@@ -12,11 +15,15 @@ class Admin::MessagesController < Admin::ApplicationController
 
   def show
     @message = Message.find(params[:id])
+
+    add_breadcrumb I18n.t('admin.breadcrumbs.messages.show'), admin_message_path(@message)
   end
 
   def new
     @message = Message.new
     @groups = visible_groups
+
+    add_breadcrumb I18n.t('admin.breadcrumbs.messages.new'), new_admin_message_path
   end
 
   def create
@@ -27,7 +34,7 @@ class Admin::MessagesController < Admin::ApplicationController
       @message.user = current_user
 
       if @message.save
-        flash[:notice] = t('flash.message_created')
+        flash[:notice] = t('admin.flash.message_created')
       else
         flash[:error] = @message.errors.full_messages.last
       end
@@ -71,7 +78,7 @@ class Admin::MessagesController < Admin::ApplicationController
       send_message(@message)
     else
       if updated
-        flash[:notice] = t('flash.message_edited')
+        flash[:notice] = t('admin.flash.message_edited')
       else
         flash[:error] = @message.errors.full_messages.last
       end
@@ -83,6 +90,8 @@ class Admin::MessagesController < Admin::ApplicationController
   def edit
     @message = Message.find(params[:id])
     @groups = visible_groups
+
+    add_breadcrumb I18n.t('admin.breadcrumbs.messages.edit'), edit_admin_message_path(@message)
   end
 
   def destroy

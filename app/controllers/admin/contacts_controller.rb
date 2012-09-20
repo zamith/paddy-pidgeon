@@ -3,6 +3,9 @@ class Admin::ContactsController < Admin::ApplicationController
   respond_to :html, except: [:available]
   respond_to :json, only:   [:available]
 
+  add_breadcrumb I18n.t('admin.breadcrumbs.home'), :root_path
+  add_breadcrumb I18n.t('admin.breadcrumbs.contacts.index'), :admin_contacts_path
+
   def available
     # Show only the contacts with a name
     if can?(:manage, Citygate::User)
@@ -10,6 +13,7 @@ class Admin::ContactsController < Admin::ApplicationController
     else
       @contacts = Contact.find_all_by_user_id(current_user.id, select: [:id, :name]).delete_if{|c|c.name.blank?}
     end
+
     if params[:group] != "null"
       @existing_contacts = Contact.select([:id, :name]).where("id in(?)", Group.find(params[:group]).contact_ids).delete_if{|c|c.name.blank?}
     end
@@ -34,9 +38,9 @@ class Admin::ContactsController < Admin::ApplicationController
     end
 
     if at_least_one_created
-      flash[:notice] = t('flash.mass_contacts_created') 
+      flash[:notice] = t('admin.flash.mass_contacts_created') 
     else
-      flash[:error] = t('flash.mass_update_error')
+      flash[:error] = t('admin.flash.mass_update_error')
     end
     redirect_to admin_contacts_path
   end
@@ -51,11 +55,15 @@ class Admin::ContactsController < Admin::ApplicationController
 
   def show
     @contact = Contact.includes(:groups).find(params[:id])
+
+    add_breadcrumb I18n.t('admin.breadcrumbs.contacts.show'), admin_contact_path(@contact)
   end
 
   def new
     @contact = Contact.new
     @groups = Group.find_all_by_user_id current_user.id
+
+    add_breadcrumb I18n.t('admin.breadcrumbs.contacts.new'), new_admin_contact_path
   end
 
   def create
@@ -64,7 +72,7 @@ class Admin::ContactsController < Admin::ApplicationController
     @contact.group_ids = params[:groups].split(",")
 
     if @contact.save
-      flash[:notice] = t('flash.contact_created', number: @contact.phone_number)
+      flash[:notice] = t('admin.flash.contact_created', number: @contact.phone_number)
     else
       flash[:error] = @contact.errors.full_messages.last
     end
@@ -77,7 +85,7 @@ class Admin::ContactsController < Admin::ApplicationController
     group_ids = params[:group_ids].split(",") + @contact.group_ids
 
     if @contact.update_attributes(params[:contact].merge group_ids: group_ids)
-      flash[:notice] = t('flash.contact_edited', number: @contact.phone_number)
+      flash[:notice] = t('admin.flash.contact_edited', number: @contact.phone_number)
     else
       flash[:error] = @contact.errors.full_messages.last
     end
@@ -88,6 +96,8 @@ class Admin::ContactsController < Admin::ApplicationController
   def edit
     @contact = Contact.find(params[:id])
     @groups = Group.find_all_by_user_id current_user.id
+
+    add_breadcrumb I18n.t('admin.breadcrumbs.contacts.edit'), edit_admin_contact_path(@contact)
   end
 
   def destroy

@@ -20,6 +20,29 @@ en:
       mass_add_contacts: "Add Multiple Contacts"
       send: "Send"
 
+    breadcrumbs:
+      contacts:
+        edit: "Edit Contact"
+        index: "Contacts"
+        new: "New Contact"
+        show: "Show Contact"
+      events:
+        edit: "Edit Event"
+        index: "Events"
+        new: "New Event"
+        show: "Show Event"
+      home: "Home"
+      groups:
+        edit: "Edit Group"
+        index: "Groups"
+        new: "New Group"
+        show: "Show Group"
+      messages:
+        edit: "Edit Message"
+        index: "Messages"
+        new: "New Message"
+        show: "Show Message"
+
     contacts:
       edit:
         title: "Edit Contact"
@@ -41,7 +64,6 @@ en:
       validations:
         phone_number: "Insert a nine digit number."
 
-
     events:
       edit:
         title: "Edit Event"
@@ -56,6 +78,21 @@ en:
         title: "New Event"
       show:
         title: "Event Details"
+
+    flash:
+      contact_created: "Created contact with phone number %{number}."
+      contact_edited: "Edited contact with phone number %{number}."
+      error_sending_message: "There was an error sending your message"
+      event_created: "Created event %{name}."
+      event_edited: "Edited event %{name}."
+      group_created: "Created group %{name}."
+      group_edited: "Edited group %{name}."
+      message_created: "Created message."
+      message_edited: "Edited message."
+      mass_contacts_created: "Created contacts."
+      mass_update_error: "There was an error creating your contacts."
+      multiple_messages_sent: "A total of %{number_of_messages} messages were delivered."
+      one_message_sent: "Your message was sent"
 
     groups:
       edit:
@@ -83,6 +120,7 @@ en:
         group: "Group"
         no_date: ""
         no_group: "None"
+        number_of_messages: "Number of messages"
         text: "Text"
       index:
         title: "Messages"
@@ -113,20 +151,3 @@ en:
   users:
     show:
       title: "Profile Details"
-
-  # Generic
-
-  flash:
-      contact_created: "Created contact with phone number %{number}."
-      contact_edited: "Edited contact with phone number %{number}."
-      error_sending_message: "There was an error sending your message"
-      event_created: "Created event %{name}."
-      event_edited: "Edited event %{name}."
-      group_created: "Created group %{name}."
-      group_edited: "Edited group %{name}."
-      message_created: "Created message."
-      message_edited: "Edited message."
-      mass_contacts_created: "Created contacts."
-      mass_update_error: "There was an error creating your contacts."
-      multiple_messages_sent: "A total of %{number_of_messages} messages were delivered."
-      one_message_sent: "Your message was sent"

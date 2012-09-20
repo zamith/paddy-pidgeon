@@ -23,6 +23,10 @@
   <% end %>
 
   <div class="wrapper">
+    <div id="breadcrumbs">
+      <%= render_breadcrumbs :separator => ' > ' %>
+    </div>
+
     <div id="main-content">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash-#{name}" if msg.is_a?(String) %>
