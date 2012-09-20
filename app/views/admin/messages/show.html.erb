@@ -2,12 +2,19 @@
 
 <ul class='details'>
   <li><span class='label'><%= t('admin.messages.fields.text') %></span><p><%= @message.text %></p></li>
-  <li>
-    <% if @message.deliver_date %>
+
+  <% if @message.deliver_date %>
+    <li>
       <span class='label'><%= t('admin.messages.fields.deliver_date') %></span>
       <span><%= @message.deliver_date.strftime("%d %B %Y") %></span>
-    <% end %>
+    </li>
+  <% end %>
+
+  <li>
+    <span class='label'><%= t('admin.messages.fields.number_of_messages') %></span>
+    <span><%= (@message.text.size / 160).floor + 1 %></span>
   </li>
+
   <li>
     <span class='label'><%= t('admin.messages.fields.group') %></span>
     <span><%= @message.group.name if @message.group %></span>

@@ -3,10 +3,11 @@
 <% end %>
 
 <fieldset>
-  <%= text_field_tag 'no_of_messages', '0', class: 'counter' %>
-
   <%= form.label :text %>
   <%= form.text_area :text, rows: 10, required: 'required' %>
+
+  <%= form.label :number_of_messages %>
+  <%= text_field_tag 'no_of_messages', (@message.text.size / 160).floor + 1, class: 'counter' %>
 
   <%#= form.label :deliver_date %>
   <%#= form.date_select :deliver_date, 

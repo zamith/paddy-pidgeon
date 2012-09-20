@@ -2,8 +2,11 @@
 <html>
 <head>
   <title>PaddyPigeon</title>
+  <%= favicon_link_tag %>
+
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application", async: true %>
+
   <%= csrf_meta_tags %>
   <%= yield :head %>
 </head>
@@ -19,6 +22,10 @@
   <% end %>
 
   <div class="wrapper">
+    <div id="breadcrumbs">
+      <%= render_breadcrumbs :separator => ' > ' %>
+    </div>
+
     <div id="main-content">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash-#{name}" if msg.is_a?(String) %>

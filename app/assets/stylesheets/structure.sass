@@ -72,11 +72,15 @@ header
   padding-left: 60px
 
 
+#breadcrumbs
+  margin-top: 80px
+
+
 #main-content
   background-image: image-url('envelope_top.png'), image-url('envelope_bottom.png'), image-url('envelope.png')
   background-position: center top, center bottom, center center
   background-repeat: no-repeat, no-repeat, repeat-y
-  margin-top: 120px
+  margin-top: 20px
   min-height: 220px
   padding: 40px
 
@@ -95,7 +99,7 @@ header
 .stamp-icon
   background-repeat: no-repeat
   display: inline-block
-  height: 131px
+  height: 132px
   margin: 30px 25px
   overflow: hidden
   text-indent: 100%
@@ -179,7 +183,8 @@ header
     @include inline-block(none)
 
   button
-    font-size: 0.8rem
+    font-size: 0.9rem
+    font-weight: normal
 
   button, .button
     background-color: #7492A3
@@ -213,6 +218,7 @@ header
     margin-bottom: 25px
 
   p
+    line-height: 1.4em
     width: 542px
     @include inline-block(top)
 
