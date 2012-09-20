@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require citygate
 //= require jquery.tokeninput
+//= require preloadCssImages.jQuery_v5
+//= require jquery.tools.min
+//= require citygate
 //= require contacts
 //= require groups
 //= require messages
+//= require pigeotto_init
