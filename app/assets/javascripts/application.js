@@ -17,3 +17,5 @@
 //= require contacts
 //= require groups
 //= require messages
+//= require preloadCssImages.jQuery_v5
+//= require home
