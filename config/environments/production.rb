@@ -20,6 +20,9 @@ PaddyPidgeon::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Set an Expires header with an expiry date 1 year in the future
+  config.static_cache_control = "public, max-age=31536000"
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
@@ -75,5 +78,5 @@ PaddyPidgeon::Application.configure do
     :enable_starttls_auto => true
   }
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = {:host => "paddypigeon.herokuapp.com"}
+  config.action_mailer.default_url_options = {:host => "http://paddypigeon.herokuapp.com/"}
 end
