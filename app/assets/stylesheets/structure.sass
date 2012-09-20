@@ -72,10 +72,6 @@ header
   padding-left: 60px
 
 
-#breadcrumbs
-  margin-top: 80px
-
-
 #main-content
   background-image: image-url('envelope_top.png'), image-url('envelope_bottom.png'), image-url('envelope.png')
   background-position: center top, center bottom, center center
@@ -232,6 +228,25 @@ header
   .label
     width: 200px
     @include inline-block(top)
+
+
+::-webkit-scrollbar
+  width: 8px
+
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment
+  display: block
+  height: 0px
+
+
+::-webkit-scrollbar-track-piece
+  background-color: #EEE
+
+
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal
+  background-color: #CCC
 
 
 footer
