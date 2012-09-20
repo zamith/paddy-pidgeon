@@ -5,6 +5,10 @@
 @include font-face('Oxygen', font-files('Oxygen-Regular.ttf'))
 
 
+*
+  @include box-sizing(border-box)
+
+
 body
   background-image: image-url('bg.png')
   font-family: Oxygen, sans-serif
@@ -58,7 +62,7 @@ header
   background-repeat: no-repeat
   color: #FFF
   display: block
-  height: 35px
+  height: 51px
   margin-top: 60px
   padding: 20px 0 0 150px
   width: 95px
@@ -83,9 +87,9 @@ header
   nav
     background-image: image-url('login.png')
     background-repeat: no-repeat
-    height: 95px
+    height: 133px
     padding-left: 180px
-    padding-top: 40px
+    padding-top: 30px
 
 
 #main-content.logo
@@ -228,25 +232,6 @@ header
   .label
     width: 200px
     @include inline-block(top)
-
-
-::-webkit-scrollbar
-  width: 8px
-
-
-::-webkit-scrollbar-button:start:decrement,
-::-webkit-scrollbar-button:end:increment
-  display: block
-  height: 0px
-
-
-::-webkit-scrollbar-track-piece
-  background-color: #EEE
-
-
-::-webkit-scrollbar-thumb:vertical,
-::-webkit-scrollbar-thumb:horizontal
-  background-color: #CCC
 
 
 footer

@@ -11,17 +11,18 @@ form
     float: left
     margin-bottom: 5px
 
-  input
+  input, textarea
     border: 1px solid rgba(0, 0, 0, 0.4)
-    clear: right
     font-size: 0.9rem
-    height: 20px
+    line-height: 1.3em
     padding: 5px
-    width: 250px
     @include border-radius(5px)
 
+  input
+    width: 250px
+
   label
-    clear: both
+    clear: left
     padding-top: 8px
     width: 200px
 
@@ -29,8 +30,6 @@ form
     font-size: 1em
 
   textarea
-    font-size: 0.9rem
-    line-height: 1.3em
     max-width: 535px
     width: 535px
 
