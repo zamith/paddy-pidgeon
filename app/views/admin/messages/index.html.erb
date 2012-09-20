@@ -9,7 +9,8 @@
   <thead>
     <tr>
       <th><%= t('admin.messages.fields.name') %></th>
-      <th><%= t('admin.messages.fields.deliver_date') %></th>
+      <th><%= t('admin.messages.fields.number_of_messages') %></th>
+      <%# t('admin.messages.fields.deliver_date') %>
       <th><%= t('admin.messages.fields.group') %></th>
       <th></th>
     </tr>
@@ -18,7 +19,8 @@
     <% @messages.each do |message| %>
       <tr>
         <td><%= link_to truncate(message.text, length: 25), admin_message_path(message) %></td>
-        <td><%= (message.deliver_date) ? message.deliver_date.strftime("%d %B %Y") : t('admin.messages.fields.no_date') %></td>
+        <td><%= (message.text.size / 160).floor + 1 %></td>
+        <%# (message.deliver_date) ? message.deliver_date.strftime("%d %B %Y") : t('admin.messages.fields.no_date') %>
         <td><%= message.group.name unless message.group.nil? %></td>
         <td><i class='icon-pencil'></i><%= link_to t('admin.actions.edit'), edit_admin_message_path(message) %><i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_message_path(message), confirm: t('admin.actions.confirm'), :method => :delete, class: 'danger' %></td>
       </tr>
