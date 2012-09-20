@@ -1,0 +1,1 @@
+(function(){$(function(){var e;return e={$el:$("#role_id"),select_new_role:function(){return e.$el.on("change",function(t){return $.post("home/role_change",{data:e.$el.val()},function(e){return window.location.href=e.redirect})})},init:function(){return e.select_new_role()}},e.init()})}).call(this);
