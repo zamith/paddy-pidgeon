@@ -1,6 +1,6 @@
 class MessageCounter
   def self.count(numbers, user)
-    vodafone, optimus, tmn = 0
+    vodafone = optimus = tmn = 0
     numbers.each do |number|
       operator_indicator = number.match(/(\d\d)/)[1]
       case operator_indicator
@@ -15,6 +15,9 @@ class MessageCounter
       end
     end
 
-    user.update_attributes { vodafone: user.vodafone + vodafone, tmn: user.tmn + tmn, optimus: user.optimus + optimus }
+    user.vodafone += vodafone
+    user.tmn += tmn
+    user.optimus += optimus
+    user.save
   end
 end
