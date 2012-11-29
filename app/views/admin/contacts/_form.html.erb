@@ -1,13 +1,13 @@
 <fieldset>
-  <%= form.label :phone_number %>
+  <%= form.label :phone_number, "#{t('admin.contacts.fields.phone_number')} *" %>
   <%= form.phone_field :phone_number, required: 'required', pattern: "(\\+351|00351)?\\d{9}", title: t('admin.contacts.validations.phone_number') %>
 
-  <%= form.label :name %>
+  <%= form.label :name  %>
   <%= form.text_field :name %>
 
   <%= form.label :email %>
   <%= form.email_field :email %>
 
-  <%= label_tag :group_ids, t("admin.contacts.fields.group_ids") %>
-  <%= text_field_tag :group_ids %>
+  <%= form.label :group_ids, "#{t("admin.contacts.fields.group_ids")} *" %>
+  <%= form.text_field :group_ids, required: 'required' %>
 </fieldset>

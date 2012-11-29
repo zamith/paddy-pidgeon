@@ -39,7 +39,7 @@ class Admin::ContactsController < Admin::ApplicationController
     end
 
     if at_least_one_created
-      flash[:notice] = t('admin.flash.mass_contacts_created') 
+      flash[:notice] = t('admin.flash.mass_contacts_created')
     else
       flash[:error] = t('admin.flash.mass_update_error')
     end
@@ -68,9 +68,10 @@ class Admin::ContactsController < Admin::ApplicationController
   end
 
   def create
+    group_ids = params[:contact].delete :group_ids
     @contact = Contact.new params[:contact]
     @contact.user = current_user
-    @contact.group_ids = params[:groups].split(",")
+    @contact.group_ids = group_ids.split(",")
 
     if @contact.save
       flash[:notice] = t('admin.flash.contact_created', number: @contact.phone_number)
