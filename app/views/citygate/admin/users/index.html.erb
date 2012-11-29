@@ -1,11 +1,14 @@
 <h1><%= t('admin.users.index.title') %></h1>
 
-<table class='list'>
+<table class='admin-list'>
   <thead>
     <tr>
       <th><%= t('admin.users.fields.email') %></th>
       <th><%= t('admin.users.fields.name') %></th>
       <th><%= t('admin.users.fields.role') %></th>
+      <th><%= t('admin.users.fields.vodafone') %></th>
+      <th><%= t('admin.users.fields.tmn') %></th>
+      <th><%= t('admin.users.fields.optimus') %></th>
       <th></th>
     </tr>
   </thead>
@@ -15,7 +18,10 @@
         <td><%= link_to truncate(user.email, length: 25), admin_user_path(user) %></td>
         <td><%= user.full_name %></td>
         <td><%= (user.role) ? user.role.name : t('admin.users.fields.no_role') %></td>
-        <td>
+        <td><%= user.vodafone %></td>
+        <td><%= user.tmn %></td>
+        <td><%= user.optimus %></td>
+        <td class='links'>
           <i class='icon-pencil'></i><%= link_to t('admin.actions.edit'), edit_admin_user_path(user) %>
           <i class='icon-trash'></i><%= link_to t('admin.actions.delete'), admin_user_path(user), confirm: t('admin.actions.confirm'), :method => :delete, class: 'danger' if can? :update, user %>
         </td>

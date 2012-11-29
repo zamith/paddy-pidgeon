@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120916230052) do
+ActiveRecord::Schema.define(:version => 20121129180917) do
 
   create_table "citygate_authorizations", :force => true do |t|
     t.string   "provider"
@@ -69,6 +69,9 @@ ActiveRecord::Schema.define(:version => 20120916230052) do
     t.string   "invited_by_type"
     t.string   "password_salt"
     t.integer  "role_id"
+    t.integer  "vodafone",                             :default => 0
+    t.integer  "tmn",                                  :default => 0
+    t.integer  "optimus",                              :default => 0
   end
 
   add_index "citygate_users", ["confirmation_token"], :name => "index_citygate_users_on_confirmation_token", :unique => true

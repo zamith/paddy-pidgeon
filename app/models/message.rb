@@ -8,20 +8,23 @@ class Message < ActiveRecord::Base
 
   before_save :strip_of_unicode_chars
 
+  @@url = URI.parse("http://#{configatrix.message_sender['url']}:#{configatrix.message_sender['port']}")
+
   def send_from_phone
+    phone_numbers = self.group.contacts.select(:phone_number).map(&:phone_number)
     params = {
-      'user' => configatrix.message_sender['username'], 
+      'user' => configatrix.message_sender['username'],
       'key' => configatrix.message_sender['password'],
       'message' => self.text,
-      'numbers[]' => self.group.contacts.select(:phone_number).map(&:phone_number)
+      'numbers[]' => phone_numbers
     }
-    url = URI.parse("http://#{configatrix.message_sender['url']}:#{configatrix.message_sender['port']}")
-    http = Net::HTTP.new(url.host, url.port)
-    request = Net::HTTP::Post.new("/form")
-    request.set_form_data(params)
-    response = http.request(request)
+    MessageCounter.count(phone_numbers, self.user)
+    #http = Net::HTTP.new(@@url.host, @@url.port)
+    #request = Net::HTTP::Post.new("/form")
+    #request.set_form_data(params)
+    #response = http.request(request)
 
-    response.code == '200'
+    #response.code == '200'
   end
 
   def strip_of_unicode_chars
@@ -37,6 +40,16 @@ class Message < ActiveRecord::Base
 
     def number_of_messages(text)
       text.size/160 + 1
+    end
+
+    def available(operator)
+      raise ArgumentError, "Invalid operator (vodafone, tmn or optimus)" unless ["vodafone", "tmn", "optimus"].include? operator
+
+      http = Net::HTTP.new(@@url.host, @@url.port)
+      request = Net::HTTP::Get.new("/credits/#{operator}")
+      response = http.request(request)
+
+      response.body
     end
   end
 end

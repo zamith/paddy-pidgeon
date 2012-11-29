@@ -171,6 +171,35 @@ header
   i
     padding-right: 5px
 
+.admin-list
+  font-size: 0.9rem
+  width: 742px
+
+  thead
+    color: #FFF
+
+    tr
+      background-color: #7492A3
+
+  tbody tr:nth-child(odd)
+    background-color: rgba(117, 147, 163, 0.5)
+
+  tbody tr:nth-child(even)
+    background-color: rgba(117, 147, 163, 0.2)
+
+  td, th
+    margin: 10px
+    width: 70px
+    @include inline-block(none)
+
+    &.links
+      display: inline
+
+  td a
+    margin-right: 15px
+
+  i
+    padding-right: 5px
 
 .actions
   font-size: 0.9rem
