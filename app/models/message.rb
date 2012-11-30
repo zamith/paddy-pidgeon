@@ -19,12 +19,12 @@ class Message < ActiveRecord::Base
       'numbers[]' => phone_numbers
     }
     MessageCounter.count(phone_numbers, self.user)
-    #http = Net::HTTP.new(@@url.host, @@url.port)
-    #request = Net::HTTP::Post.new("/form")
-    #request.set_form_data(params)
-    #response = http.request(request)
+    http = Net::HTTP.new(@@url.host, @@url.port)
+    request = Net::HTTP::Post.new("/form")
+    request.set_form_data(params)
+    response = http.request(request)
 
-    #response.code == '200'
+    response.code == '200'
   end
 
   def strip_of_unicode_chars
