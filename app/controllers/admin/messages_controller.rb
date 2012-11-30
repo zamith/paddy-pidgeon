@@ -56,6 +56,7 @@ class Admin::MessagesController < Admin::ApplicationController
 
     delivered = true
     @messages.each do |msg|
+      msg.user_id = message.user_id
       # Sending must occur after saving so that the unicode chars can be stripped
       delivered = false unless msg.send_from_phone
     end
