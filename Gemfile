@@ -8,6 +8,7 @@ gem 'rails', '3.2.8'
 gem 'breadcrumbs_on_rails'
 gem 'will_paginate'
 gem 'heroku'
+gem 'rails_engine_decorators'
 
 # Gems used only for assets and not required
 # in production environments by default.
