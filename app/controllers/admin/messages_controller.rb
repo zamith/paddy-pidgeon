@@ -63,10 +63,10 @@ class Admin::MessagesController < Admin::ApplicationController
 
     if delivered
       flash[:notice] = (@messages.size == 1) ?
-        t("flash.one_message_sent") :
-        t("flash.multiple_messages_sent", number_of_messages: @messages.size)
+        t("admin.flash.one_message_sent") :
+        t("admin.flash.multiple_messages_sent", number_of_messages: @messages.size)
     else
-      flash[:error] = t("flash.error_sending_message")
+      flash[:error] = t("admin.flash.error_sending_message")
     end
 
     respond_with(@messages, location: admin_messages_path)
